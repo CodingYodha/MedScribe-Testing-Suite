@@ -1,0 +1,33 @@
+# Core ML + Training
+torch==2.8.0+cu126
+torchvision==0.23.0+cu126
+torchaudio==2.8.0+cu126
+transformers==4.56.2
+bitsandbytes==0.48.1
+accelerate==1.11.0
+unsloth==2025.10.7
+unsloth_zoo==2025.10.8
+scikit-learn==1.7.2
+
+# Audio & ASR
+faster-whisper==1.2.0
+speechbrain==1.0.3
+soundfile==0.13.1
+librosa==0.10.2.post1   # optional, latest stable compatible with torch 2.8
+
+# LLM Inference
+llama_cpp_python==0.3.16
+anthropic==0.42.0       # if your Claude integration uses this API
+
+# Utilities / Visualization
+ipywidgets==8.1.7
+tqdm==4.67.1
+numpy==2.3.4
+pandas==2.3.3
+
+# Hugging Face Hub
+huggingface-hub==0.35.3
+datasets==4.2.0
+safetensors==0.6.2
+
+

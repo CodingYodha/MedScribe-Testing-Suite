@@ -1,0 +1,6 @@
+models/
+!models/finetuned/gemma-prescription-finetuned-it-merged_final/
+models/finetuned/gemma-prescription-finetuned-it-merged_final/* filter=lfs diff=lfs merge=lfs -text
+
+.env
+

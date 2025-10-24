@@ -1,0 +1,36 @@
+"_comment":["v3-turbo"]
+{
+"medicines": [
+{"name": "Metformin", "dosage": "500mg", "frequency": "daily", "duration": "one month"},
+{"name": "Sakali", "dosage": "1 tablet"},
+{"name": "Radri", "dosage": "1 tablet"},
+{"name": "Live 252 syrup", "dosage": "2 tsp", "frequency": "2 tsp", "duration": "30 days"},
+{"name": "Oily and sugar food", "dosage": "not specified"},
+{"name": "Walk for 30 minutes"}
+],
+"diseases": [
+"Fatty liver",
+"High sugar level"
+],
+"tests": [
+{"name": "ultrasound of abdomen", "timing": "next visit"}
+]
+}
+
+
+"_comment":["v3"]
+{
+"medicines": [
+{"name": "Metformin", "dosage": "500mg", "frequency": "morning and evening", "duration": "one month"},
+{"name": "Live 1252 Syrup", "dosage": "2 tsp", "frequency": "twice a day"},
+{"name": "Oily and sugar food", "dosage": "not specified"},
+{"name": "Walk", "timing": "daily", "duration": "30 minutes"}
+],
+"diseases": [
+"Fatty liver",
+"High sugar level"
+],
+"tests": [
+{"name": "ultrasound of abdomen", "timing": "next visit"}
+]
+}

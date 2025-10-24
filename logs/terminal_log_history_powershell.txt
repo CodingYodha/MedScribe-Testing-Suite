@@ -1,0 +1,2338 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+Loading personal and system profiles took 2983ms.
+(base) PS E:\Projects\Med_Scribe\Medscribe_testing> conda activate medd
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> git add .
+warning: in the working copy of 'self_code.ipynb', LF will be replaced by CRLF the next time Git touches it
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   gemma_finetuning_unsloth.py
+        modified:   requirements.txt
+        modified:   self_code.ipynb
+
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> git commit -m "Model Loaded"
+[main 9e19eb1] Model Loaded
+ 3 files changed, 19 insertions(+), 4 deletions(-)
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> git push origin Main
+fatal: Main cannot be resolved to branch
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> git push origin main
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 20 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 672 bytes | 672.00 KiB/s, done.
+Total 5 (delta 4), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (4/4), completed with 4 local objects.
+To https://github.com/CodingYodha/MedScribe_Test.git
+   4805bb6..9e19eb1  main -> main
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> git add .
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   gemma_finetuning_unsloth.py
+
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> git commit -m "LOAD MODEL WITH UNSLOTH, ADD LORA ADAPTERS, LOAD AND PREPARE DATASET, FORMAT DATA FOR TRAINING"
+[main b6942b6] LOAD MODEL WITH UNSLOTH, ADD LORA ADAPTERS, LOAD AND PREPARE DATASET, FORMAT DATA FOR TRAINING
+ 1 file changed, 124 insertions(+)
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 20 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 2.32 KiB | 2.32 MiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/CodingYodha/MedScribe_Test.git
+   9e19eb1..b6942b6  main -> main
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> git add .
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> git commit -m "Added SETUP TRAINER, TRAIN MODEL, SAVE MODEL, EVALUATION, TEST INFERENCE, MEMORY SUMMARY"
+[main 9bdc85d] Added SETUP TRAINER, TRAIN MODEL, SAVE MODEL, EVALUATION, TEST INFERENCE, MEMORY SUMMARY
+ 1 file changed, 169 insertions(+), 1 deletion(-)
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 20 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 4.01 KiB | 4.01 MiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/CodingYodha/MedScribe_Test.git
+   b6942b6..9bdc85d  main -> main
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> python gemma_finetuning_unsloth.py
+🦥 Unsloth: Will patch your computer to enable 2x faster free finetuning.
+Traceback (most recent call last):
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\unsloth_zoo\temporary_patches\utils.py", line 107, in <module>
+    from transformers.processing_utils import Unpack
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\transformers\processing_utils.py", line 75, in <module>
+    from .modeling_utils import PreTrainedAudioTokenizerBase
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\transformers\modeling_utils.py", line 129, in <module>
+    from torchao.quantization import Int4WeightOnlyConfig
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\torchao\__init__.py", line 63, in <module>
+    from torchao.quantization import (
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\torchao\quantization\__init__.py", line 6, in <module>
+    from .autoquant import (
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\torchao\quantization\autoquant.py", line 11, in <module>
+    from torchao.dtypes import (
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\torchao\dtypes\__init__.py", line 1, in <module>
+    from . import affine_quantized_tensor_ops
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\torchao\dtypes\affine_quantized_tensor_ops.py", line 11, in <module>
+    from torchao.dtypes.affine_quantized_tensor import (
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\torchao\dtypes\affine_quantized_tensor.py", line 17, in <module>
+    from torchao.quantization.quant_primitives import (
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\torchao\quantization\quant_primitives.py", line 174, in <module>
+    torch.int1: (-(2**0), 2**0 - 1),
+    ^^^^^^^^^^
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\torch\__init__.py", line 2562, in __getattr__
+    raise AttributeError(f"module '{__name__}' has no attribute '{name}'")
+AttributeError: module 'torch' has no attribute 'int1'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\unsloth\__init__.py", line 91, in <module>
+    import unsloth_zoo
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\unsloth_zoo\__init__.py", line 96, in <module>
+    from .temporary_patches import (
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\unsloth_zoo\temporary_patches\__init__.py", line 19, in <module>
+    from .gemma import *
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\unsloth_zoo\temporary_patches\gemma.py", line 22, in <module>
+    from .utils import (
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\unsloth_zoo\temporary_patches\utils.py", line 128, in <module>
+    raise Exception(e)
+Exception: module 'torch' has no attribute 'int1'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Projects\Med_Scribe\Medscribe_testing\gemma_finetuning_unsloth.py", line 4, in <module>
+    from unsloth import FastLanguageModel
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\unsloth\__init__.py", line 93, in <module>
+    raise ImportError("Unsloth: Please install unsloth_zoo via `pip install unsloth_zoo`")
+ImportError: Unsloth: Please install unsloth_zoo via `pip install unsloth_zoo`
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> pip install unsloth_zoo
+Requirement already satisfied: unsloth_zoo in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (2025.10.8)
+Requirement already satisfied: torch>=2.4.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from unsloth_zoo) (2.5.1)
+Requirement already satisfied: torchao!=0.14.0,>=0.13.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from unsloth_zoo) (0.13.0)
+Requirement already satisfied: triton_windows in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from unsloth_zoo) (3.5.0.post21)
+Requirement already satisfied: packaging>=24.1 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from unsloth_zoo) (25.0)
+Requirement already satisfied: tyro in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from unsloth_zoo) (0.9.35)
+Requirement already satisfied: transformers!=4.52.0,!=4.52.1,!=4.52.2,!=4.52.3,!=4.53.0,!=4.54.0,!=4.55.0,!=4.55.1,<=4.56.2,>=4.51.3 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from unsloth_zoo) (4.56.2)
+Requirement already satisfied: datasets!=4.0.*,!=4.1.0,>=3.4.1 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from unsloth_zoo) (4.2.0)
+Requirement already satisfied: sentencepiece>=0.2.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from unsloth_zoo) (0.2.1)
+Requirement already satisfied: tqdm in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from unsloth_zoo) (4.67.1)
+Requirement already satisfied: psutil in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from unsloth_zoo) (7.1.1)
+Requirement already satisfied: wheel>=0.42.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from unsloth_zoo) (0.45.1)
+Requirement already satisfied: numpy in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from unsloth_zoo) (2.3.4)
+Requirement already satisfied: accelerate>=0.34.1 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from unsloth_zoo) (1.11.0)
+Requirement already satisfied: trl!=0.15.0,!=0.19.0,!=0.9.0,!=0.9.1,!=0.9.2,!=0.9.3,<=0.23.0,>=0.7.9 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from unsloth_zoo) (0.23.0)
+Requirement already satisfied: peft!=0.11.0,>=0.7.1 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from unsloth_zoo) (0.17.1)
+Requirement already satisfied: protobuf in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from unsloth_zoo) (6.33.0)
+Requirement already satisfied: huggingface_hub>=0.34.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from unsloth_zoo) (0.35.3)
+Requirement already satisfied: hf_transfer in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from unsloth_zoo) (0.1.9)
+Requirement already satisfied: cut_cross_entropy in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from unsloth_zoo) (25.1.1)
+Requirement already satisfied: pillow in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from unsloth_zoo) (11.1.0)
+Requirement already satisfied: regex in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from unsloth_zoo) (2025.10.23)
+Requirement already satisfied: msgspec in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from unsloth_zoo) (0.19.0)
+Requirement already satisfied: typing_extensions in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from unsloth_zoo) (4.15.0)
+Requirement already satisfied: filelock in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from unsloth_zoo) (3.17.0)
+Requirement already satisfied: mistral_common in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from unsloth_zoo) (1.8.5)
+Requirement already satisfied: pyyaml>=5.1 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from transformers!=4.52.0,!=4.52.1,!=4.52.2,!=4.52.3,!=4.53.0,!=4.54.0,!=4.55.0,!=4.55.1,<=4.56.2,>=4.51.3->unsloth_zoo) (6.0.2)
+Requirement already satisfied: requests in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from transformers!=4.52.0,!=4.52.1,!=4.52.2,!=4.52.3,!=4.53.0,!=4.54.0,!=4.55.0,!=4.55.1,<=4.56.2,>=4.51.3->unsloth_zoo) (2.32.5)
+Requirement already satisfied: tokenizers<=0.23.0,>=0.22.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from transformers!=4.52.0,!=4.52.1,!=4.52.2,!=4.52.3,!=4.53.0,!=4.54.0,!=4.55.0,!=4.55.1,<=4.56.2,>=4.51.3->unsloth_zoo) (0.22.1)
+Requirement already satisfied: safetensors>=0.4.3 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from transformers!=4.52.0,!=4.52.1,!=4.52.2,!=4.52.3,!=4.53.0,!=4.54.0,!=4.55.0,!=4.55.1,<=4.56.2,>=4.51.3->unsloth_zoo) (0.6.2)
+Requirement already satisfied: fsspec>=2023.5.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from huggingface_hub>=0.34.0->unsloth_zoo) (2025.9.0)
+Requirement already satisfied: pyarrow>=21.0.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from datasets!=4.0.*,!=4.1.0,>=3.4.1->unsloth_zoo) (21.0.0)
+Requirement already satisfied: dill<0.4.1,>=0.3.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from datasets!=4.0.*,!=4.1.0,>=3.4.1->unsloth_zoo) (0.4.0)
+Requirement already satisfied: pandas in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from datasets!=4.0.*,!=4.1.0,>=3.4.1->unsloth_zoo) (2.3.3)
+Requirement already satisfied: httpx<1.0.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from datasets!=4.0.*,!=4.1.0,>=3.4.1->unsloth_zoo) (0.28.1)
+Requirement already satisfied: xxhash in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from datasets!=4.0.*,!=4.1.0,>=3.4.1->unsloth_zoo) (3.6.0)
+Requirement already satisfied: multiprocess<0.70.17 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from datasets!=4.0.*,!=4.1.0,>=3.4.1->unsloth_zoo) (0.70.16)
+Requirement already satisfied: aiohttp!=4.0.0a0,!=4.0.0a1 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from fsspec[http]<=2025.9.0,>=2023.1.0->datasets!=4.0.*,!=4.1.0,>=3.4.1->unsloth_zoo) (3.13.1)
+Requirement already satisfied: anyio in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from httpx<1.0.0->datasets!=4.0.*,!=4.1.0,>=3.4.1->unsloth_zoo) (4.11.0)
+Requirement already satisfied: certifi in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from httpx<1.0.0->datasets!=4.0.*,!=4.1.0,>=3.4.1->unsloth_zoo) (2025.10.5)
+Requirement already satisfied: httpcore==1.* in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from httpx<1.0.0->datasets!=4.0.*,!=4.1.0,>=3.4.1->unsloth_zoo) (1.0.9)
+Requirement already satisfied: idna in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from httpx<1.0.0->datasets!=4.0.*,!=4.1.0,>=3.4.1->unsloth_zoo) (3.7)
+Requirement already satisfied: h11>=0.16 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from httpcore==1.*->httpx<1.0.0->datasets!=4.0.*,!=4.1.0,>=3.4.1->unsloth_zoo) (0.16.0)
+Requirement already satisfied: aiohappyeyeballs>=2.5.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.9.0,>=2023.1.0->datasets!=4.0.*,!=4.1.0,>=3.4.1->unsloth_zoo) (2.6.1)
+Requirement already satisfied: aiosignal>=1.4.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.9.0,>=2023.1.0->datasets!=4.0.*,!=4.1.0,>=3.4.1->unsloth_zoo) (1.4.0)
+Requirement already satisfied: attrs>=17.3.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.9.0,>=2023.1.0->datasets!=4.0.*,!=4.1.0,>=3.4.1->unsloth_zoo) (25.4.0)
+Requirement already satisfied: frozenlist>=1.1.1 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.9.0,>=2023.1.0->datasets!=4.0.*,!=4.1.0,>=3.4.1->unsloth_zoo) (1.8.0)
+Requirement already satisfied: multidict<7.0,>=4.5 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.9.0,>=2023.1.0->datasets!=4.0.*,!=4.1.0,>=3.4.1->unsloth_zoo) (6.7.0)
+Requirement already satisfied: propcache>=0.2.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.9.0,>=2023.1.0->datasets!=4.0.*,!=4.1.0,>=3.4.1->unsloth_zoo) (0.4.1)
+Requirement already satisfied: yarl<2.0,>=1.17.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.9.0,>=2023.1.0->datasets!=4.0.*,!=4.1.0,>=3.4.1->unsloth_zoo) (1.22.0)
+Requirement already satisfied: charset_normalizer<4,>=2 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from requests->transformers!=4.52.0,!=4.52.1,!=4.52.2,!=4.52.3,!=4.53.0,!=4.54.0,!=4.55.0,!=4.55.1,<=4.56.2,>=4.51.3->unsloth_zoo) (3.3.2)
+Requirement already satisfied: urllib3<3,>=1.21.1 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from requests->transformers!=4.52.0,!=4.52.1,!=4.52.2,!=4.52.3,!=4.53.0,!=4.54.0,!=4.55.0,!=4.55.1,<=4.56.2,>=4.51.3->unsloth_zoo) (2.5.0)
+Collecting sympy==1.13.1 (from torch>=2.4.0->unsloth_zoo)
+  Using cached sympy-1.13.1-py3-none-any.whl.metadata (12 kB)
+Requirement already satisfied: networkx in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch>=2.4.0->unsloth_zoo) (3.5)
+Requirement already satisfied: jinja2 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch>=2.4.0->unsloth_zoo) (3.1.6)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from sympy==1.13.1->torch>=2.4.0->unsloth_zoo) (1.3.0)
+Requirement already satisfied: colorama in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from tqdm->unsloth_zoo) (0.4.6)
+Requirement already satisfied: sniffio>=1.1 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from anyio->httpx<1.0.0->datasets!=4.0.*,!=4.1.0,>=3.4.1->unsloth_zoo) (1.3.1)
+Requirement already satisfied: MarkupSafe>=2.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from jinja2->torch>=2.4.0->unsloth_zoo) (3.0.2)
+Requirement already satisfied: pydantic<3.0,>=2.7 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from mistral_common->unsloth_zoo) (2.12.3)
+Requirement already satisfied: jsonschema>=4.21.1 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from mistral_common->unsloth_zoo) (4.25.1)
+Requirement already satisfied: tiktoken>=0.7.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from mistral_common->unsloth_zoo) (0.12.0)
+Requirement already satisfied: pydantic-extra-types>=2.10.5 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from pydantic-extra-types[pycountry]>=2.10.5->mistral_common->unsloth_zoo) (2.10.6)
+Requirement already satisfied: annotated-types>=0.6.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from pydantic<3.0,>=2.7->mistral_common->unsloth_zoo) (0.7.0)
+Requirement already satisfied: pydantic-core==2.41.4 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from pydantic<3.0,>=2.7->mistral_common->unsloth_zoo) (2.41.4)
+Requirement already satisfied: typing-inspection>=0.4.2 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from pydantic<3.0,>=2.7->mistral_common->unsloth_zoo) (0.4.2)
+Requirement already satisfied: jsonschema-specifications>=2023.03.6 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from jsonschema>=4.21.1->mistral_common->unsloth_zoo) (2025.9.1)
+Requirement already satisfied: referencing>=0.28.4 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from jsonschema>=4.21.1->mistral_common->unsloth_zoo) (0.37.0)
+Requirement already satisfied: rpds-py>=0.7.1 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from jsonschema>=4.21.1->mistral_common->unsloth_zoo) (0.27.1)
+Requirement already satisfied: pycountry>=23 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from pydantic-extra-types[pycountry]>=2.10.5->mistral_common->unsloth_zoo) (24.6.1)
+Requirement already satisfied: python-dateutil>=2.8.2 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from pandas->datasets!=4.0.*,!=4.1.0,>=3.4.1->unsloth_zoo) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from pandas->datasets!=4.0.*,!=4.1.0,>=3.4.1->unsloth_zoo) (2025.2)
+Requirement already satisfied: tzdata>=2022.7 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from pandas->datasets!=4.0.*,!=4.1.0,>=3.4.1->unsloth_zoo) (2025.2)
+Requirement already satisfied: six>=1.5 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from python-dateutil>=2.8.2->pandas->datasets!=4.0.*,!=4.1.0,>=3.4.1->unsloth_zoo) (1.17.0)
+Requirement already satisfied: docstring-parser>=0.15 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from tyro->unsloth_zoo) (0.17.0)
+Requirement already satisfied: rich>=11.1.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from tyro->unsloth_zoo) (14.2.0)
+Requirement already satisfied: shtab>=1.5.6 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from tyro->unsloth_zoo) (1.7.2)
+Requirement already satisfied: typeguard>=4.0.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from tyro->unsloth_zoo) (4.4.4)
+Requirement already satisfied: markdown-it-py>=2.2.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from rich>=11.1.0->tyro->unsloth_zoo) (4.0.0)
+Requirement already satisfied: pygments<3.0.0,>=2.13.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from rich>=11.1.0->tyro->unsloth_zoo) (2.19.2)
+Requirement already satisfied: mdurl~=0.1 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from markdown-it-py>=2.2.0->rich>=11.1.0->tyro->unsloth_zoo) (0.1.2)
+Using cached sympy-1.13.1-py3-none-any.whl (6.2 MB)
+Installing collected packages: sympy
+  Attempting uninstall: sympy
+    Found existing installation: sympy 1.14.0
+    Uninstalling sympy-1.14.0:
+      Successfully uninstalled sympy-1.14.0
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+xformers 0.0.32.post2 requires torch==2.8.0, but you have torch 2.5.1 which is incompatible.
+Successfully installed sympy-1.13.1
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> python gemma_finetuning_unsloth.py
+🦥 Unsloth: Will patch your computer to enable 2x faster free finetuning.
+Traceback (most recent call last):
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\unsloth_zoo\temporary_patches\utils.py", line 107, in <module>
+    from transformers.processing_utils import Unpack
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\transformers\processing_utils.py", line 75, in <module>
+    from .modeling_utils import PreTrainedAudioTokenizerBase
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\transformers\modeling_utils.py", line 129, in <module>
+    from torchao.quantization import Int4WeightOnlyConfig
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\torchao\__init__.py", line 63, in <module>
+    from torchao.quantization import (
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\torchao\quantization\__init__.py", line 6, in <module>
+    from .autoquant import (
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\torchao\quantization\autoquant.py", line 11, in <module>
+    from torchao.dtypes import (
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\torchao\dtypes\__init__.py", line 1, in <module>
+    from . import affine_quantized_tensor_ops
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\torchao\dtypes\affine_quantized_tensor_ops.py", line 11, in <module>
+    from torchao.dtypes.affine_quantized_tensor import (
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\torchao\dtypes\affine_quantized_tensor.py", line 17, in <module>
+    from torchao.quantization.quant_primitives import (
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\torchao\quantization\quant_primitives.py", line 174, in <module>
+    torch.int1: (-(2**0), 2**0 - 1),
+    ^^^^^^^^^^
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\torch\__init__.py", line 2562, in __getattr__
+    raise AttributeError(f"module '{__name__}' has no attribute '{name}'")
+AttributeError: module 'torch' has no attribute 'int1'
+
+
+Traceback (most recent call last):
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\unsloth\__init__.py", line 91, in <module>
+    import unsloth_zoo
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\unsloth_zoo\__init__.py", line 96, in <module>
+    from .temporary_patches import (
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\unsloth_zoo\temporary_patches\__init__.py", line 19, in <m
+odule>                                                                                                                      from .gemma import *
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\unsloth_zoo\temporary_patches\gemma.py", line 22, in <modu
+le>                                                                                                                         from .utils import (
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\unsloth_zoo\temporary_patches\utils.py", line 128, in <mod
+ule>                                                                                                                        raise Exception(e)
+Exception: module 'torch' has no attribute 'int1'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Projects\Med_Scribe\Medscribe_testing\gemma_finetuning_unsloth.py", line 4, in <module>
+    from unsloth import FastLanguageModel
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\unsloth\__init__.py", line 93, in <module>
+    raise ImportError("Unsloth: Please install unsloth_zoo via `pip install unsloth_zoo`")
+ImportError: Unsloth: Please install unsloth_zoo via `pip install unsloth_zoo`
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> python
+Python 3.11.14 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 18:30:03) [MSC v.1929 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import unsloth
+🦥 Unsloth: Will patch your computer to enable 2x faster free finetuning.
+Traceback (most recent call last):
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\unsloth_zoo\temporary_patches\utils.py", line 107, in <module>
+    from transformers.processing_utils import Unpack
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\transformers\processing_utils.py", line 75, in <module>
+    from .modeling_utils import PreTrainedAudioTokenizerBase
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\transformers\modeling_utils.py", line 129, in <module>
+    from torchao.quantization import Int4WeightOnlyConfig
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\torchao\__init__.py", line 63, in <module>
+    from torchao.quantization import (
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\torchao\quantization\__init__.py", line 6, in <module>
+    from .autoquant import (
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\torchao\quantization\autoquant.py", line 11, in <module>
+    from torchao.dtypes import (
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\torchao\dtypes\__init__.py", line 1, in <module>
+    from . import affine_quantized_tensor_ops
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\torchao\dtypes\affine_quantized_tensor_ops.py", line 11, in <module>
+    from torchao.dtypes.affine_quantized_tensor import (
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\torchao\dtypes\affine_quantized_tensor.py", line 17, in <module>
+    from torchao.quantization.quant_primitives import (
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\torchao\quantization\quant_primitives.py", line 174, in <module>
+    torch.int1: (-(2**0), 2**0 - 1),
+    ^^^^^^^^^^
+    raise AttributeError(f"module '{__name__}' has no attribute '{name}'")
+AttributeError: module 'torch' has no attribute 'int1'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\unsloth\__init__.py", line 91, in <module>
+    import unsloth_zoo
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\unsloth_zoo\__init__.py", line 96, in <module>
+    from .temporary_patches import (
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\unsloth_zoo\temporary_patches\__init__.py", line 19, in <m
+odule>                                                                                                                      from .gemma import *
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\unsloth_zoo\temporary_patches\gemma.py", line 22, in <modu
+le>                                                                                                                         from .utils import (
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\unsloth_zoo\temporary_patches\utils.py", line 128, in <mod
+ule>                                                                                                                        raise Exception(e)
+Exception: module 'torch' has no attribute 'int1'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\unsloth\__init__.py", line 93, in <module>
+    raise ImportError("Unsloth: Please install unsloth_zoo via `pip install unsloth_zoo`")
+ImportError: Unsloth: Please install unsloth_zoo via `pip install unsloth_zoo`
+>>> import unsloth_zoo
+🦥 Unsloth: Will patch your computer to enable 2x faster free finetuning.
+Traceback (most recent call last):
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\unsloth_zoo\temporary_patches\utils.py", line 107, in <module>
+    from transformers.processing_utils import Unpack
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\transformers\processing_utils.py", line 75, in <module>
+    from .modeling_utils import PreTrainedAudioTokenizerBase
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\transformers\modeling_utils.py", line 129, in <module>
+    from torchao.quantization import Int4WeightOnlyConfig
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\torchao\__init__.py", line 63, in <module>
+    from torchao.quantization import (
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\torchao\quantization\__init__.py", line 6, in <module>
+    from .autoquant import (
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\torchao\quantization\autoquant.py", line 11, in <module>
+    from torchao.dtypes import (
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\torchao\dtypes\__init__.py", line 1, in <module>
+    from . import affine_quantized_tensor_ops
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\torchao\dtypes\affine_quantized_tensor_ops.py", line 11, i    from torchao.dtypes.affine_quantized_tensor import (
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\torchao\dtypes\affine_quantized_tensor.py", line 17, in <m
+odule>                                                                                                                      from torchao.quantization.quant_primitives import (
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\torchao\quantization\quant_primitives.py", line 174, in <m
+odule>                                                                                                                      torch.int1: (-(2**0), 2**0 - 1),
+    ^^^^^^^^^^
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\torch\__init__.py", line 2562, in __getattr__
+    raise AttributeError(f"module '{__name__}' has no attribute '{name}'")
+AttributeError: module 'torch' has no attribute 'int1'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\unsloth_zoo\__init__.py", line 96, in <module>
+    from .temporary_patches import (
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\unsloth_zoo\temporary_patches\__init__.py", line 19, in <m
+odule>                                                                                                                      from .gemma import *
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\unsloth_zoo\temporary_patches\gemma.py", line 22, in <modu
+le>                                                                                                                         from .utils import (
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\unsloth_zoo\temporary_patches\utils.py", line 128, in <mod
+ule>                                                                                                                        raise Exception(e)
+Exception: module 'torch' has no attribute 'int1'
+>>>
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> pip list | grep torch
+torch                     2.5.1
+torchao                   0.13.0
+torchaudio                2.5.1
+torchvision               0.20.1
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> pip uninstall torch torchvision torchaudio torchao
+Found existing installation: torch 2.5.1
+Uninstalling torch-2.5.1:
+  Would remove:
+    c:\users\shiva\miniconda3\envs\medd\lib\site-packages\functorch
+    c:\users\shiva\miniconda3\envs\medd\lib\site-packages\torch
+    c:\users\shiva\miniconda3\envs\medd\lib\site-packages\torch-2.5.1-py3.11.egg-info
+    c:\users\shiva\miniconda3\envs\medd\lib\site-packages\torchgen
+    c:\users\shiva\miniconda3\envs\medd\scripts\convert-caffe2-to-onnx-script.py
+    c:\users\shiva\miniconda3\envs\medd\scripts\convert-caffe2-to-onnx.exe
+    c:\users\shiva\miniconda3\envs\medd\scripts\convert-onnx-to-caffe2-script.py
+    c:\users\shiva\miniconda3\envs\medd\scripts\convert-onnx-to-caffe2.exe
+    c:\users\shiva\miniconda3\envs\medd\scripts\torchfrtrace-script.py
+    c:\users\shiva\miniconda3\envs\medd\scripts\torchfrtrace.exe
+    c:\users\shiva\miniconda3\envs\medd\scripts\torchrun-script.py
+    c:\users\shiva\miniconda3\envs\medd\scripts\torchrun.exe
+Proceed (Y/n)? y
+  Successfully uninstalled torch-2.5.1
+Found existing installation: torchvision 0.20.1
+Uninstalling torchvision-0.20.1:
+  Would remove:
+    c:\users\shiva\miniconda3\envs\medd\lib\site-packages\torchvision
+    c:\users\shiva\miniconda3\envs\medd\lib\site-packages\torchvision-0.20.1-py3.11.egg-info
+Proceed (Y/n)? Y
+  Successfully uninstalled torchvision-0.20.1
+Found existing installation: torchaudio 2.5.1
+Uninstalling torchaudio-2.5.1:
+  Would remove:
+    c:\users\shiva\miniconda3\envs\medd\lib\site-packages\torchaudio
+    c:\users\shiva\miniconda3\envs\medd\lib\site-packages\torchaudio-2.5.1-py3.11.egg-info
+    c:\users\shiva\miniconda3\envs\medd\lib\site-packages\torio
+Proceed (Y/n)? Y
+  Successfully uninstalled torchaudio-2.5.1
+Found existing installation: torchao 0.13.0
+Uninstalling torchao-0.13.0:
+  Would remove:
+    c:\users\shiva\miniconda3\envs\medd\lib\site-packages\torchao-0.13.0.dist-info\*
+    c:\users\shiva\miniconda3\envs\medd\lib\site-packages\torchao\*
+Proceed (Y/n)? Y
+  Successfully uninstalled torchao-0.13.0
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> pip list | grep torch
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> conda clean --all
+Will remove 251 (2.76 GB) tarball(s).
+Proceed ([y]/n)? y
+
+Will remove 1 index cache(s).
+Proceed ([y]/n)? y
+
+Will remove 21 (115.8 MB) package(s).
+Proceed ([y]/n)? y
+
+There are no tempfile(s) to remove.
+There are no logfile(s) to remove.
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> conda install pytorch torchvision torchaudio pytorch-cuda=12.4 -c pytorch -c nvidia -y
+3 channel Terms of Service accepted
+Channels:
+ - pytorch
+ - nvidia
+ - defaults
+Platform: win-64
+Collecting package metadata (repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: C:\Users\Shiva\miniconda3\envs\medd
+
+  added / updated specs:
+    - pytorch
+    - pytorch-cuda=12.4
+    - torchaudio
+    - torchvision
+
+
+The following NEW packages will be INSTALLED:
+
+  pytorch            pytorch/win-64::pytorch-2.5.1-py3.11_cuda12.4_cudnn9_0
+  sympy              pkgs/main/win-64::sympy-1.14.0-py311haa95532_0
+
+
+
+Downloading and Extracting Packages:
+
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> pip list | grep torch
+torch                     2.5.1
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> conda clean --all
+There are no unused tarball(s) to remove.
+Will remove 1 index cache(s).
+Proceed ([y]/n)? y
+
+There are no unused package(s) to remove.
+There are no tempfile(s) to remove.
+There are no logfile(s) to remove.
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> pip uninstall torch torchvision torchaudio torchao
+Found existing installation: torch 2.5.1
+Uninstalling torch-2.5.1:
+  Would remove:
+    c:\users\shiva\miniconda3\envs\medd\lib\site-packages\functorch
+    c:\users\shiva\miniconda3\envs\medd\lib\site-packages\torch
+    c:\users\shiva\miniconda3\envs\medd\lib\site-packages\torch-2.5.1-py3.11.egg-info
+    c:\users\shiva\miniconda3\envs\medd\lib\site-packages\torchgen
+    c:\users\shiva\miniconda3\envs\medd\scripts\convert-caffe2-to-onnx-script.py
+    c:\users\shiva\miniconda3\envs\medd\scripts\convert-caffe2-to-onnx.exe
+    c:\users\shiva\miniconda3\envs\medd\scripts\convert-onnx-to-caffe2-script.py
+    c:\users\shiva\miniconda3\envs\medd\scripts\convert-onnx-to-caffe2.exe
+    c:\users\shiva\miniconda3\envs\medd\scripts\torchfrtrace-script.py
+    c:\users\shiva\miniconda3\envs\medd\scripts\torchfrtrace.exe
+    c:\users\shiva\miniconda3\envs\medd\scripts\torchrun-script.py
+    c:\users\shiva\miniconda3\envs\medd\scripts\torchrun.exe
+Proceed (Y/n)? y
+  Successfully uninstalled torch-2.5.1
+WARNING: Skipping torchvision as it is not installed.
+WARNING: Skipping torchaudio as it is not installed.
+WARNING: Skipping torchao as it is not installed.
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> pip install --upgrade torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu124
+Looking in indexes: https://pypi.org/simple, https://download.pytorch.org/whl/cu124
+Collecting torch
+  Using cached torch-2.9.0-cp311-cp311-win_amd64.whl.metadata (30 kB)
+Collecting torchvision
+  Using cached torchvision-0.24.0-cp311-cp311-win_amd64.whl.metadata (5.9 kB)
+Collecting torchaudio
+  Using cached torchaudio-2.9.0-cp311-cp311-win_amd64.whl.metadata (6.9 kB)
+Requirement already satisfied: filelock in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch) (3.17.0)
+Requirement already satisfied: typing-extensions>=4.10.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch) (4.15.0)
+Collecting sympy>=1.13.3 (from torch)
+  Downloading https://download.pytorch.org/whl/sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+Requirement already satisfied: networkx>=2.5.1 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch) (3.5)
+Requirement already satisfied: jinja2 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch) (3.1.6)
+Requirement already satisfied: fsspec>=0.8.5 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch) (2025.9.0)
+Requirement already satisfied: numpy in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torchvision) (2.3.4)
+Requirement already satisfied: pillow!=8.3.*,>=5.3.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torchvision) (11.1.0)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from sympy>=1.13.3->torch) (1.3.0)
+Requirement already satisfied: MarkupSafe>=2.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from jinja2->torch) (3.0.2)
+Using cached torch-2.9.0-cp311-cp311-win_amd64.whl (109.3 MB)
+Downloading torchvision-0.24.0-cp311-cp311-win_amd64.whl (4.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.0/4.0 MB 11.5 MB/s  0:00:00
+Using cached torchaudio-2.9.0-cp311-cp311-win_amd64.whl (664 kB)
+Downloading https://download.pytorch.org/whl/sympy-1.14.0-py3-none-any.whl (6.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 11.7 MB/s  0:00:00
+Installing collected packages: sympy, torch, torchvision, torchaudio
+  Attempting uninstall: sympy
+    Found existing installation: sympy 1.13.1
+    Uninstalling sympy-1.13.1:
+      Successfully uninstalled sympy-1.13.1
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+unsloth-zoo 2025.10.8 requires torchao!=0.14.0,>=0.13.0, which is not installed.
+xformers 0.0.32.post2 requires torch==2.8.0, but you have torch 2.9.0 which is incompatible.
+Successfully installed sympy-1.14.0 torch-2.9.0 torchaudio-2.9.0 torchvision-0.24.0
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> pip uninstall torch torchvision torchaudio torchao
+Found existing installation: torch 2.9.0
+Uninstalling torch-2.9.0:
+  Would remove:
+    c:\users\shiva\miniconda3\envs\medd\lib\site-packages\functorch\*
+    c:\users\shiva\miniconda3\envs\medd\lib\site-packages\torch-2.9.0.dist-info\*
+    c:\users\shiva\miniconda3\envs\medd\lib\site-packages\torch\*
+    c:\users\shiva\miniconda3\envs\medd\lib\site-packages\torchgen\*
+    c:\users\shiva\miniconda3\envs\medd\scripts\torchfrtrace.exe
+    c:\users\shiva\miniconda3\envs\medd\scripts\torchrun.exe
+Proceed (Y/n)? y
+  Successfully uninstalled torch-2.9.0
+Found existing installation: torchvision 0.24.0
+Uninstalling torchvision-0.24.0:
+  Would remove:
+    c:\users\shiva\miniconda3\envs\medd\lib\site-packages\torchvision-0.24.0.dist-info\*
+    c:\users\shiva\miniconda3\envs\medd\lib\site-packages\torchvision\*
+Proceed (Y/n)? y
+  Successfully uninstalled torchvision-0.24.0
+Found existing installation: torchaudio 2.9.0
+Uninstalling torchaudio-2.9.0:
+  Would remove:
+    c:\users\shiva\miniconda3\envs\medd\lib\site-packages\torchaudio-2.9.0.dist-info\*
+    c:\users\shiva\miniconda3\envs\medd\lib\site-packages\torchaudio\*
+Proceed (Y/n)? y
+  Successfully uninstalled torchaudio-2.9.0
+WARNING: Skipping torchao as it is not installed.
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> pip install torch==2.7.0 torchvision==0.23.0 torchaudio==2.7.0 --extra-index-url https://download.pytorch.org/whl/cu124
+Looking in indexes: https://pypi.org/simple, https://download.pytorch.org/whl/cu124
+Collecting torch==2.7.0
+  Downloading torch-2.7.0-cp311-cp311-win_amd64.whl.metadata (29 kB)
+Collecting torchvision==0.23.0
+  Using cached torchvision-0.23.0-cp311-cp311-win_amd64.whl.metadata (6.1 kB)
+Collecting torchaudio==2.7.0
+  Downloading torchaudio-2.7.0-cp311-cp311-win_amd64.whl.metadata (6.7 kB)
+Requirement already satisfied: filelock in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch==2.7.0) (3.17.0)
+Requirement already satisfied: typing-extensions>=4.10.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch==2.7.0) (4.15.0)
+Requirement already satisfied: sympy>=1.13.3 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch==2.7.0) (1.14.0)
+Requirement already satisfied: networkx in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch==2.7.0) (3.5)
+Requirement already satisfied: jinja2 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch==2.7.0) (3.1.6)
+Requirement already satisfied: fsspec in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch==2.7.0) (2025.9.0)
+Requirement already satisfied: numpy in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torchvision==0.23.0) (2.3.4)
+INFO: pip is looking at multiple versions of torchvision to determine which version is compatible with other requirements. This could take a while.
+ERROR: Cannot install torch==2.7.0 and torchvision==0.23.0 because these package versions have conflicting dependencies.
+
+The conflict is caused by:
+    The user requested torch==2.7.0
+    torchvision 0.23.0 depends on torch==2.8.0
+
+To fix this you could try to:
+1. loosen the range of package versions you've specified
+2. remove package versions to allow pip to attempt to solve the dependency conflict
+
+ERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> pip uninstall torch torchvision torchaudio torchao
+WARNING: Skipping torch as it is not installed.
+WARNING: Skipping torchvision as it is not installed.
+WARNING: Skipping torchaudio as it is not installed.
+WARNING: Skipping torchao as it is not installed.
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> pip install torch==2.8.0 torchvision==0.23.1 torchaudio==2.8.0 --extra-index-url https://download.pytorch.org/whl/cu124
+Looking in indexes: https://pypi.org/simple, https://download.pytorch.org/whl/cu124
+Collecting torch==2.8.0
+  Using cached torch-2.8.0-cp311-cp311-win_amd64.whl.metadata (30 kB)
+ERROR: Ignored the following yanked versions: 0.1.6, 0.1.7, 0.1.8, 0.1.9, 0.2.0, 0.2.1, 0.2.2, 0.2.2.post2, 0.2.2.post3, 0.15.0
+ERROR: Could not find a version that satisfies the requirement torchvision==0.23.1 (from versions: 0.1.6, 0.2.0, 0.15.1, 0.15.2, 0.16.0, 0.16.1, 0.16.2, 0.17.0, 0.17.1, 0.17.2, 0.18.0, 0.18.1, 0.19.0, 0.19.0+cu124, 0.19.1, 0.19.1+cu124, 0.20.0, 0.20.0+cu124, 0.20.1, 0.20.1+cu124, 0.21.0, 0.21.0+cu124, 0.22.0, 0.22.1, 0.23.0, 0.24.0)
+ERROR: No matching distribution found for torchvision==0.23.1
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> nvidia-smi
+Thu Oct 23 01:27:48 2025
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 581.08                 Driver Version: 581.08         CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                  Driver-Model | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 3050 ...  WDDM  |   00000000:01:00.0 Off |                  N/A |
+| N/A   42C    P8              3W /   90W |     264MiB /   6144MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A           14412    C+G   ...Browser\Application\brave.exe      N/A      |
+|    0   N/A  N/A           23696    C+G   ...Browser\Application\brave.exe      N/A      |
++-----------------------------------------------------------------------------------------+
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> pip uninstall torch torchvision torchaudio torchao
+WARNING: Skipping torch as it is not installed.
+WARNING: Skipping torchvision as it is not installed.
+WARNING: Skipping torchaudio as it is not installed.
+WARNING: Skipping torchao as it is not installed.
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> pip3 install torch torchaudio torchvision --index-url https://download.pytorch.org/whl/cu130
+Looking in indexes: https://download.pytorch.org/whl/cu130
+Collecting torch
+  Downloading https://download.pytorch.org/whl/cu130/torch-2.9.0%2Bcu130-cp311-cp311-win_amd64.whl.metadata (29 kB)
+Collecting torchaudio
+  Downloading https://download.pytorch.org/whl/cu130/torchaudio-2.9.0%2Bcu130-cp311-cp311-win_amd64.whl.metadata (7.0 kB)
+Collecting torchvision
+  Downloading https://download.pytorch.org/whl/cu130/torchvision-0.24.0%2Bcu130-cp311-cp311-win_amd64.whl.metadata (6.1 kB)
+Requirement already satisfied: filelock in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch) (3.17.0)
+Requirement already satisfied: typing-extensions>=4.10.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch) (4.15.0)
+Requirement already satisfied: sympy>=1.13.3 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch) (1.14.0)
+Requirement already satisfied: networkx>=2.5.1 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch) (3.5)
+Requirement already satisfied: jinja2 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch) (3.1.6)
+Requirement already satisfied: fsspec>=0.8.5 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch) (2025.9.0)
+Requirement already satisfied: numpy in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torchvision) (2.3.4)
+Requirement already satisfied: pillow!=8.3.*,>=5.3.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torchvision) (11.1.0)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from sympy>=1.13.3->torch) (1.3.0)
+Requirement already satisfied: MarkupSafe>=2.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from jinja2->torch) (3.0.2)
+Downloading https://download.pytorch.org/whl/cu130/torch-2.9.0%2Bcu130-cp311-cp311-win_amd64.whl (1860.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.9/1.9 GB 10.1 MB/s  0:02:46
+Downloading https://download.pytorch.org/whl/cu130/torchaudio-2.9.0%2Bcu130-cp311-cp311-win_amd64.whl (2.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 10.7 MB/s  0:00:00
+Downloading https://download.pytorch.org/whl/cu130/torchvision-0.24.0%2Bcu130-cp311-cp311-win_amd64.whl (8.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.7/8.7 MB 11.4 MB/s  0:00:00
+Installing collected packages: torch, torchvision, torchaudio
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+unsloth-zoo 2025.10.8 requires torchao!=0.14.0,>=0.13.0, which is not installed.
+xformers 0.0.32.post2 requires torch==2.8.0, but you have torch 2.9.0+cu130 which is incompatible.
+Successfully installed torch-2.9.0+cu130 torchaudio-2.9.0+cu130 torchvision-0.24.0+cu130
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> pip3 install torch==2.8.0 torchaudio torchvision --index-url https://download.pytorch.org/whl/cu130
+Looking in indexes: https://download.pytorch.org/whl/cu130
+ERROR: Could not find a version that satisfies the requirement torch==2.8.0 (from versions: 2.9.0+cu130)
+ERROR: No matching distribution found for torch==2.8.0
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> pip uninstall torch torchvision torchaudio torchao
+Found existing installation: torch 2.9.0+cu130
+Uninstalling torch-2.9.0+cu130:
+  Would remove:
+    c:\users\shiva\miniconda3\envs\medd\lib\site-packages\functorch\*
+    c:\users\shiva\miniconda3\envs\medd\lib\site-packages\torch-2.9.0+cu130.dist-info\*
+    c:\users\shiva\miniconda3\envs\medd\lib\site-packages\torch\*
+    c:\users\shiva\miniconda3\envs\medd\lib\site-packages\torchgen\*
+    c:\users\shiva\miniconda3\envs\medd\scripts\torchfrtrace.exe
+    c:\users\shiva\miniconda3\envs\medd\scripts\torchrun.exe
+Proceed (Y/n)? y
+  Successfully uninstalled torch-2.9.0+cu130
+Found existing installation: torchvision 0.24.0+cu130
+Uninstalling torchvision-0.24.0+cu130:
+  Would remove:
+    c:\users\shiva\miniconda3\envs\medd\lib\site-packages\torchvision-0.24.0+cu130.dist-info\*
+    c:\users\shiva\miniconda3\envs\medd\lib\site-packages\torchvision\*
+Proceed (Y/n)? y
+  Successfully uninstalled torchvision-0.24.0+cu130
+Found existing installation: torchaudio 2.9.0+cu130
+Uninstalling torchaudio-2.9.0+cu130:
+  Would remove:
+    c:\users\shiva\miniconda3\envs\medd\lib\site-packages\torchaudio-2.9.0+cu130.dist-info\*
+    c:\users\shiva\miniconda3\envs\medd\lib\site-packages\torchaudio\*
+Proceed (Y/n)? y
+  Successfully uninstalled torchaudio-2.9.0+cu130
+WARNING: Skipping torchao as it is not installed.
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu128
+Looking in indexes: https://download.pytorch.org/whl/cu128
+Collecting torch
+  Downloading https://download.pytorch.org/whl/cu128/torch-2.9.0%2Bcu128-cp311-cp311-win_amd64.whl.metadata (29 kB)
+Collecting torchvision
+  Downloading https://download.pytorch.org/whl/cu128/torchvision-0.24.0%2Bcu128-cp311-cp311-win_amd64.whl.metadata (6.1 kB)
+Requirement already satisfied: filelock in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch) (3.17.0)
+Requirement already satisfied: typing-extensions>=4.10.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch) (4.15.0)
+Requirement already satisfied: sympy>=1.13.3 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch) (1.14.0)
+Requirement already satisfied: networkx>=2.5.1 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch) (3.5)
+Requirement already satisfied: jinja2 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch) (3.1.6)
+Requirement already satisfied: fsspec>=0.8.5 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch) (2025.9.0)
+Requirement already satisfied: numpy in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torchvision) (2.3.4)
+Requirement already satisfied: pillow!=8.3.*,>=5.3.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torchvision) (11.1.0)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from sympy>=1.13.3->torch) (1.3.0)
+Requirement already satisfied: MarkupSafe>=2.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from jinja2->torch) (3.0.2)
+Downloading https://download.pytorch.org/whl/cu128/torch-2.9.0%2Bcu128-cp311-cp311-win_amd64.whl (2860.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.9/2.9 GB 8.7 MB/s  0:04:19
+Downloading https://download.pytorch.org/whl/cu128/torchvision-0.24.0%2Bcu128-cp311-cp311-win_amd64.whl (9.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.4/9.4 MB 11.4 MB/s  0:00:00
+Installing collected packages: torch, torchvision
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+speechbrain 1.0.3 requires torchaudio, which is not installed.
+unsloth-zoo 2025.10.8 requires torchao!=0.14.0,>=0.13.0, which is not installed.
+xformers 0.0.32.post2 requires torch==2.8.0, but you have torch 2.9.0+cu128 which is incompatible.
+Successfully installed torch-2.9.0+cu128 torchvision-0.24.0+cu128
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> pip uninstall torch torchvision torchaudio torchao
+Found existing installation: torch 2.9.0+cu128
+Uninstalling torch-2.9.0+cu128:
+  Would remove:
+    c:\users\shiva\miniconda3\envs\medd\lib\site-packages\functorch\*
+    c:\users\shiva\miniconda3\envs\medd\lib\site-packages\torch-2.9.0+cu128.dist-info\*
+    c:\users\shiva\miniconda3\envs\medd\lib\site-packages\torch\*
+    c:\users\shiva\miniconda3\envs\medd\lib\site-packages\torchgen\*
+    c:\users\shiva\miniconda3\envs\medd\scripts\torchfrtrace.exe
+    c:\users\shiva\miniconda3\envs\medd\scripts\torchrun.exe
+Proceed (Y/n)? y
+  Successfully uninstalled torch-2.9.0+cu128
+Found existing installation: torchvision 0.24.0+cu128
+Uninstalling torchvision-0.24.0+cu128:
+  Would remove:
+    c:\users\shiva\miniconda3\envs\medd\lib\site-packages\torchvision-0.24.0+cu128.dist-info\*
+    c:\users\shiva\miniconda3\envs\medd\lib\site-packages\torchvision\*
+Proceed (Y/n)? y
+  Successfully uninstalled torchvision-0.24.0+cu128
+WARNING: Skipping torchaudio as it is not installed.
+WARNING: Skipping torchao as it is not installed.
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu126
+Looking in indexes: https://download.pytorch.org/whl/cu126
+Collecting torch
+  Downloading https://download.pytorch.org/whl/cu126/torch-2.9.0%2Bcu126-cp311-cp311-win_amd64.whl.metadata (29 kB)
+Collecting torchvision
+  Downloading https://download.pytorch.org/whl/cu126/torchvision-0.24.0%2Bcu126-cp311-cp311-win_amd64.whl.metadata (6.1 kB)
+Requirement already satisfied: filelock in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch) (3.17.0)
+Requirement already satisfied: typing-extensions>=4.10.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch) (4.15.0)
+Requirement already satisfied: sympy>=1.13.3 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch) (1.14.0)
+Requirement already satisfied: networkx>=2.5.1 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch) (3.5)
+Requirement already satisfied: jinja2 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch) (3.1.6)
+Requirement already satisfied: fsspec>=0.8.5 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch) (2025.9.0)
+Requirement already satisfied: numpy in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torchvision) (2.3.4)
+Requirement already satisfied: pillow!=8.3.*,>=5.3.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torchvision) (11.1.0)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from sympy>=1.13.3->torch) (1.3.0)
+Requirement already satisfied: MarkupSafe>=2.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from jinja2->torch) (3.0.2)
+Downloading https://download.pytorch.org/whl/cu126/torch-2.9.0%2Bcu126-cp311-cp311-win_amd64.whl (2582.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.6/2.6 GB 9.6 MB/s  0:03:48
+Downloading https://download.pytorch.org/whl/cu126/torchvision-0.24.0%2Bcu126-cp311-cp311-win_amd64.whl (8.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.5/8.5 MB 11.7 MB/s  0:00:00
+Installing collected packages: torch, torchvision
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+speechbrain 1.0.3 requires torchaudio, which is not installed.
+unsloth-zoo 2025.10.8 requires torchao!=0.14.0,>=0.13.0, which is not installed.
+xformers 0.0.32.post2 requires torch==2.8.0, but you have torch 2.9.0+cu126 which is incompatible.
+Successfully installed torch-2.9.0+cu126 torchvision-0.24.0+cu126
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> pip3 install torch--2.8.0 torchvision --index-url https://download.pytorch.org/whl/cu126
+Looking in indexes: https://download.pytorch.org/whl/cu126
+ERROR: Could not find a version that satisfies the requirement torch--2.8.0 (from versions: none)
+ERROR: No matching distribution found for torch--2.8.0
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> pip3 install torch==2.8.0 torchvision --index-url https://download.pytorch.org/whl/cu126
+Looking in indexes: https://download.pytorch.org/whl/cu126
+Collecting torch==2.8.0
+  Downloading https://download.pytorch.org/whl/cu126/torch-2.8.0%2Bcu126-cp311-cp311-win_amd64.whl.metadata (29 kB)
+Requirement already satisfied: torchvision in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (0.24.0+cu126)
+Requirement already satisfied: filelock in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch==2.8.0) (3.17.0)
+Requirement already satisfied: typing-extensions>=4.10.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch==2.8.0) (4.15.0)
+Requirement already satisfied: sympy>=1.13.3 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch==2.8.0) (1.14.0)
+Requirement already satisfied: networkx in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch==2.8.0) (3.5)
+Requirement already satisfied: jinja2 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch==2.8.0) (3.1.6)
+Requirement already satisfied: fsspec in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch==2.8.0) (2025.9.0)
+Requirement already satisfied: numpy in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torchvision) (2.3.4)
+INFO: pip is looking at multiple versions of torchvision to determine which version is compatible with other requirements. This could take a while.
+Collecting torchvision
+  Downloading https://download.pytorch.org/whl/cu126/torchvision-0.23.0%2Bcu126-cp311-cp311-win_amd64.whl.metadata (6.3 kB)
+Requirement already satisfied: pillow!=8.3.*,>=5.3.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torchvision) (11.1.0)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from sympy>=1.13.3->torch==2.8.0) (1.3.0)
+Requirement already satisfied: MarkupSafe>=2.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from jinja2->torch==2.8.0) (3.0.2)
+Downloading https://download.pytorch.org/whl/cu126/torch-2.8.0%2Bcu126-cp311-cp311-win_amd64.whl (2915.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.9/2.9 GB 9.4 MB/s  0:04:16
+Downloading https://download.pytorch.org/whl/cu126/torchvision-0.23.0%2Bcu126-cp311-cp311-win_amd64.whl (6.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.2/6.2 MB 11.6 MB/s  0:00:00
+Installing collected packages: torch, torchvision
+  Attempting uninstall: torch
+    Found existing installation: torch 2.9.0+cu126
+    Uninstalling torch-2.9.0+cu126:
+      Successfully uninstalled torch-2.9.0+cu126
+  Attempting uninstall: torchvision
+    Found existing installation: torchvision 0.24.0+cu126
+    Uninstalling torchvision-0.24.0+cu126:
+      Successfully uninstalled torchvision-0.24.0+cu126
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+speechbrain 1.0.3 requires torchaudio, which is not installed.
+unsloth-zoo 2025.10.8 requires torchao!=0.14.0,>=0.13.0, which is not installed.
+Successfully installed torch-2.8.0+cu126 torchvision-0.23.0+cu126
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> pip3 install torch==2.8.0 torchvision --index-url https://download.pytorch.org/whl/cu126pip install torchaudio==2.8.0+cu126 --index-url https://download.pytorch.org/whl/cu126
+Looking in indexes: https://download.pytorch.org/whl/cu126
+Requirement already satisfied: torch==2.8.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (2.8.0+cu126)
+Requirement already satisfied: torchvision in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (0.23.0+cu126)
+ERROR: Could not find a version that satisfies the requirement install (from versions: none)
+ERROR: No matching distribution found for install
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> pip install torchaudio==2.8.0+cu126 --index-url https://download.pytorch.org/whl/cu126
+Looking in indexes: https://download.pytorch.org/whl/cu126
+Collecting torchaudio==2.8.0+cu126
+  Downloading https://download.pytorch.org/whl/cu126/torchaudio-2.8.0%2Bcu126-cp311-cp311-win_amd64.whl.metadata (7.4 kB)
+Requirement already satisfied: torch==2.8.0+cu126 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torchaudio==2.8.0+cu126) (2.8.0+cu126)
+Requirement already satisfied: filelock in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch==2.8.0+cu126->torchaudio==2.8.0+cu126) (3.17.0)
+Requirement already satisfied: typing-extensions>=4.10.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch==2.8.0+cu126->torchaudio==2.8.0+cu126) (4.15.0)
+Requirement already satisfied: sympy>=1.13.3 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch==2.8.0+cu126->torchaudio==2.8.0+cu126) (1.14.0)
+Requirement already satisfied: networkx in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch==2.8.0+cu126->torchaudio==2.8.0+cu126) (3.5)
+Requirement already satisfied: jinja2 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch==2.8.0+cu126->torchaudio==2.8.0+cu126) (3.1.6)
+Requirement already satisfied: fsspec in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from torch==2.8.0+cu126->torchaudio==2.8.0+cu126) (2025.9.0)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from sympy>=1.13.3->torch==2.8.0+cu126->torchaudio==2.8.0+cu126) (1.3.0)
+Requirement already satisfied: MarkupSafe>=2.0 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from jinja2->torch==2.8.0+cu126->torchaudio==2.8.0+cu126) (3.0.2)
+Downloading https://download.pytorch.org/whl/cu126/torchaudio-2.8.0%2Bcu126-cp311-cp311-win_amd64.whl (4.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 4.6 MB/s  0:00:01
+Installing collected packages: torchaudio
+Successfully installed torchaudio-2.8.0+cu126
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> pip install torchao
+Collecting torchao
+  Downloading torchao-0.14.0-py3-none-any.whl.metadata (19 kB)
+Downloading torchao-0.14.0-py3-none-any.whl (1.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 10.3 MB/s  0:00:00
+Installing collected packages: torchao
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+unsloth-zoo 2025.10.8 requires torchao!=0.14.0,>=0.13.0, but you have torchao 0.14.0 which is incompatible.
+Successfully installed torchao-0.14.0
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> pip uninstall torchao
+Found existing installation: torchao 0.14.0
+Uninstalling torchao-0.14.0:
+  Would remove:
+    c:\users\shiva\miniconda3\envs\medd\lib\site-packages\torchao-0.14.0.dist-info\*
+    c:\users\shiva\miniconda3\envs\medd\lib\site-packages\torchao\*
+Proceed (Y/n)? y
+  Successfully uninstalled torchao-0.14.0
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> pip install torchao==0.13.0
+Collecting torchao==0.13.0
+  Using cached torchao-0.13.0-1-py3-none-any.whl.metadata (19 kB)
+Using cached torchao-0.13.0-1-py3-none-any.whl (1.0 MB)
+Installing collected packages: torchao
+Successfully installed torchao-0.13.0
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> pip list | findstr torchao
+torchao                   0.13.0
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> pip list | findstr torch
+torch                     2.8.0+cu126
+torchao                   0.13.0
+torchaudio                2.8.0+cu126
+torchvision               0.23.0+cu126
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> pip check
+No broken requirements found.
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> pip list
+Package                   Version
+------------------------- ------------
+accelerate                1.11.0
+aiohappyeyeballs          2.6.1
+aiohttp                   3.13.1
+aiosignal                 1.4.0
+annotated-types           0.7.0
+anyio                     4.11.0
+asttokens                 3.0.0
+attrs                     25.4.0
+av                        16.0.1
+bitsandbytes              0.48.1
+brotlicffi                1.0.9.2
+certifi                   2025.10.5
+cffi                      2.0.0
+charset-normalizer        3.3.2
+colorama                  0.4.6
+coloredlogs               15.0.1
+comm                      0.2.3
+ctranslate2               4.6.0
+cut-cross-entropy         25.1.1
+datasets                  4.2.0
+debugpy                   1.8.17
+decorator                 5.2.1
+diffusers                 0.35.2
+dill                      0.4.0
+diskcache                 5.6.3
+docstring_parser          0.17.0
+exceptiongroup            1.3.0
+executing                 2.2.1
+faster-whisper            1.2.0
+ffmpeg                    1.4
+filelock                  3.17.0
+flatbuffers               25.9.23
+frozenlist                1.8.0
+fsspec                    2025.9.0
+gmpy2                     2.2.1
+h11                       0.16.0
+hf_transfer               0.1.9
+httpcore                  1.0.9
+httpx                     0.28.1
+huggingface-hub           0.35.3
+humanfriendly             10.0
+HyperPyYAML               1.2.2
+idna                      3.7
+importlib_metadata        8.7.0
+ipykernel                 7.0.1
+ipython                   9.6.0
+ipython_pygments_lexers   1.1.1
+ipywidgets                8.1.7
+jedi                      0.19.2
+Jinja2                    3.1.6
+joblib                    1.5.2
+jsonschema                4.25.1
+jsonschema-specifications 2025.9.1
+jupyter_client            8.6.3
+jupyter_core              5.9.1
+jupyterlab_widgets        3.0.15
+llama_cpp_python          0.3.16
+markdown-it-py            4.0.0
+MarkupSafe                3.0.2
+matplotlib-inline         0.1.7
+mdurl                     0.1.2
+mistral_common            1.8.5
+mkl_fft                   1.3.11
+mkl_random                1.2.8
+mkl-service               2.4.0
+mpmath                    1.3.0
+msgspec                   0.19.0
+multidict                 6.7.0
+multiprocess              0.70.16
+nest_asyncio              1.6.0
+networkx                  3.5
+numpy                     2.3.4
+onnxruntime               1.23.2
+packaging                 25.0
+pandas                    2.3.3
+parso                     0.8.5
+peft                      0.17.1
+pickleshare               0.7.5
+pillow                    11.1.0
+pip                       25.2
+platformdirs              4.5.0
+prompt_toolkit            3.0.52
+propcache                 0.4.1
+protobuf                  6.33.0
+psutil                    7.1.1
+pure_eval                 0.2.3
+pyarrow                   21.0.0
+pycountry                 24.6.1
+pycparser                 2.23
+pydantic                  2.12.3
+pydantic_core             2.41.4
+pydantic-extra-types      2.10.6
+Pygments                  2.19.2
+pyreadline3               3.5.4
+PySocks                   1.7.1
+PySoundFile               0.9.0.post1
+python-dateutil           2.9.0.post0
+pytz                      2025.2
+pywin32                   311
+PyYAML                    6.0.2
+pyzmq                     27.1.0
+referencing               0.37.0
+regex                     2025.10.23
+requests                  2.32.5
+rich                      14.2.0
+rpds-py                   0.27.1
+ruamel.yaml               0.18.15
+ruamel.yaml.clib          0.2.14
+safetensors               0.6.2
+scikit-learn              1.7.2
+scipy                     1.16.2
+sentencepiece             0.2.1
+setuptools                80.9.0
+shtab                     1.7.2
+six                       1.17.0
+sniffio                   1.3.1
+soundfile                 0.13.1
+speechbrain               1.0.3
+stack_data                0.6.3
+sympy                     1.14.0
+threadpoolctl             3.6.0
+tiktoken                  0.12.0
+tokenizers                0.22.1
+torch                     2.8.0+cu126
+torchao                   0.13.0
+torchaudio                2.8.0+cu126
+torchvision               0.23.0+cu126
+tornado                   6.5.2
+tqdm                      4.67.1
+traitlets                 5.14.3
+transformers              4.56.2
+triton-windows            3.5.0.post21
+trl                       0.23.0
+typeguard                 4.4.4
+typing_extensions         4.15.0
+typing-inspection         0.4.2
+tyro                      0.9.35
+tzdata                    2025.2
+unsloth                   2025.10.7
+unsloth_zoo               2025.10.8
+urllib3                   2.5.0
+wcwidth                   0.2.14
+wheel                     0.45.1
+widgetsnbextension        4.0.14
+win-inet-pton             1.1.0
+xformers                  0.0.32.post2
+xxhash                    3.6.0
+yarl                      1.22.0
+zipp                      3.23.0
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> pip list > installed_packages.txt
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> pip install pip-conflict-checker
+Collecting pip-conflict-checker
+  Downloading pip_conflict_checker-0.6.0-py3-none-any.whl.metadata (1.5 kB)
+Requirement already satisfied: pip>=1.4.1 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from pip-conflict-checker) (25.2)
+Collecting nose>=1.3.0 (from pip-conflict-checker)
+  Downloading nose-1.3.7-py3-none-any.whl.metadata (1.7 kB)
+Collecting mock>=1.0.1 (from pip-conflict-checker)
+  Downloading mock-5.2.0-py3-none-any.whl.metadata (3.1 kB)
+Collecting flake8 (from pip-conflict-checker)
+  Downloading flake8-7.3.0-py2.py3-none-any.whl.metadata (3.8 kB)
+Collecting coverage (from pip-conflict-checker)
+  Downloading coverage-7.11.0-cp311-cp311-win_amd64.whl.metadata (9.2 kB)
+Collecting mccabe<0.8.0,>=0.7.0 (from flake8->pip-conflict-checker)
+  Downloading mccabe-0.7.0-py2.py3-none-any.whl.metadata (5.0 kB)
+Collecting pycodestyle<2.15.0,>=2.14.0 (from flake8->pip-conflict-checker)
+  Downloading pycodestyle-2.14.0-py2.py3-none-any.whl.metadata (4.5 kB)
+Collecting pyflakes<3.5.0,>=3.4.0 (from flake8->pip-conflict-checker)
+  Downloading pyflakes-3.4.0-py2.py3-none-any.whl.metadata (3.5 kB)
+Downloading pip_conflict_checker-0.6.0-py3-none-any.whl (5.4 kB)
+Downloading mock-5.2.0-py3-none-any.whl (31 kB)
+Downloading nose-1.3.7-py3-none-any.whl (154 kB)
+Downloading coverage-7.11.0-cp311-cp311-win_amd64.whl (219 kB)
+Downloading flake8-7.3.0-py2.py3-none-any.whl (57 kB)
+Downloading mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)
+Downloading pycodestyle-2.14.0-py2.py3-none-any.whl (31 kB)
+Downloading pyflakes-3.4.0-py2.py3-none-any.whl (63 kB)
+Installing collected packages: nose, pyflakes, pycodestyle, mock, mccabe, coverage, flake8, pip-conflict-checker
+Successfully installed coverage-7.11.0 flake8-7.3.0 mccabe-0.7.0 mock-5.2.0 nose-1.3.7 pip-conflict-checker-0.6.0 pycodestyle-2.14.0 pyflakes-3.4.0
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> pipconflictchecker
+C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\pipconflictchecker\checker.py:4: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import parse_version
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\Shiva\miniconda3\envs\medd\Scripts\pipconflictchecker.exe\__main__.py", line 6, in <module>
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\pipconflictchecker\checker.py", line 288, in main
+    conflicts = checker.get_conflicts()
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\pipconflictchecker\checker.py", line 272, in get_conflicts
+    validator = Validator(installed_version=installed_version, required_version_specs=specs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\pipconflictchecker\checker.py", line 42, in __init__
+    self.required_version_specs = sorted(required_version_specs, key=lambda spec: parse_version(spec[1]))
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\pipconflictchecker\checker.py", line 42, in <lambda>
+    self.required_version_specs = sorted(required_version_specs, key=lambda spec: parse_version(spec[1]))
+                                                                                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\packaging\version.py", line 202, in __init__
+    raise InvalidVersion(f"Invalid version: {version!r}")
+packaging.version.InvalidVersion: Invalid version: '4.0.*'
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> pip check
+No broken requirements found.
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> pip install pipdeptree
+Collecting pipdeptree
+  Downloading pipdeptree-2.29.0-py3-none-any.whl.metadata (14 kB)
+Requirement already satisfied: packaging>=25 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from pipdeptree) (25.0)
+Requirement already satisfied: pip>=25.2 in c:\users\shiva\miniconda3\envs\medd\lib\site-packages (from pipdeptree) (25.2)
+Downloading pipdeptree-2.29.0-py3-none-any.whl (33 kB)
+Installing collected packages: pipdeptree
+Successfully installed pipdeptree-2.29.0
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> pipdeptree
+aiohttp==3.13.1
+├── aiohappyeyeballs [required: >=2.5.0, installed: 2.6.1]
+├── aiosignal [required: >=1.4.0, installed: 1.4.0]
+│   ├── frozenlist [required: >=1.1.0, installed: 1.8.0]
+│   └── typing_extensions [required: >=4.2, installed: 4.15.0]
+├── attrs [required: >=17.3.0, installed: 25.4.0]
+├── frozenlist [required: >=1.1.1, installed: 1.8.0]
+├── multidict [required: >=4.5,<7.0, installed: 6.7.0]
+├── propcache [required: >=0.2.0, installed: 0.4.1]
+└── yarl [required: >=1.17.0,<2.0, installed: 1.22.0]
+    ├── idna [required: >=2.0, installed: 3.7]
+    ├── multidict [required: >=4.0, installed: 6.7.0]
+    └── propcache [required: >=0.2.1, installed: 0.4.1]
+brotlicffi==1.0.9.2
+└── cffi [required: >=1.0.0, installed: 2.0.0]
+    └── pycparser [required: Any, installed: 2.23]
+exceptiongroup==1.3.0
+└── typing_extensions [required: >=4.6.0, installed: 4.15.0]
+faster-whisper==1.2.0
+├── ctranslate2 [required: >=4.0,<5, installed: 4.6.0]
+│   ├── setuptools [required: Any, installed: 80.9.0]
+│   ├── numpy [required: Any, installed: 2.3.4]
+│   └── PyYAML [required: >=5.3,<7, installed: 6.0.2]
+├── huggingface-hub [required: >=0.13, installed: 0.35.3]
+│   ├── filelock [required: Any, installed: 3.17.0]
+│   ├── fsspec [required: >=2023.5.0, installed: 2025.9.0]
+│   ├── packaging [required: >=20.9, installed: 25.0]
+│   ├── PyYAML [required: >=5.1, installed: 6.0.2]
+│   ├── requests [required: Any, installed: 2.32.5]
+│   │   ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+│   │   ├── idna [required: >=2.5,<4, installed: 3.7]
+│   │   ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+│   │   └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+│   ├── tqdm [required: >=4.42.1, installed: 4.67.1]
+│   │   └── colorama [required: Any, installed: 0.4.6]
+│   └── typing_extensions [required: >=3.7.4.3, installed: 4.15.0]
+├── tokenizers [required: >=0.13,<1, installed: 0.22.1]
+│   └── huggingface-hub [required: >=0.16.4,<2.0, installed: 0.35.3]
+│       ├── filelock [required: Any, installed: 3.17.0]
+│       ├── fsspec [required: >=2023.5.0, installed: 2025.9.0]
+│       ├── packaging [required: >=20.9, installed: 25.0]
+│       ├── PyYAML [required: >=5.1, installed: 6.0.2]
+│       ├── requests [required: Any, installed: 2.32.5]
+│       │   ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+│       │   ├── idna [required: >=2.5,<4, installed: 3.7]
+│       │   ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+│       │   └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+│       ├── tqdm [required: >=4.42.1, installed: 4.67.1]
+│       │   └── colorama [required: Any, installed: 0.4.6]
+│       └── typing_extensions [required: >=3.7.4.3, installed: 4.15.0]
+├── onnxruntime [required: >=1.14,<2, installed: 1.23.2]
+│   ├── coloredlogs [required: Any, installed: 15.0.1]
+│   │   └── humanfriendly [required: >=9.1, installed: 10.0]
+│   │       └── pyreadline3 [required: Any, installed: 3.5.4]
+│   ├── flatbuffers [required: Any, installed: 25.9.23]
+│   ├── numpy [required: >=1.21.6, installed: 2.3.4]
+│   ├── packaging [required: Any, installed: 25.0]
+│   ├── protobuf [required: Any, installed: 6.33.0]
+│   └── sympy [required: Any, installed: 1.14.0]
+│       └── mpmath [required: >=1.1.0,<1.4, installed: 1.3.0]
+├── av [required: >=11, installed: 16.0.1]
+└── tqdm [required: Any, installed: 4.67.1]
+    └── colorama [required: Any, installed: 0.4.6]
+ffmpeg==1.4
+gmpy2==2.2.1
+ipykernel==7.0.1
+├── comm [required: >=0.1.1, installed: 0.2.3]
+├── debugpy [required: >=1.6.5, installed: 1.8.17]
+├── ipython [required: >=7.23.1, installed: 9.6.0]
+│   ├── colorama [required: Any, installed: 0.4.6]
+│   ├── decorator [required: Any, installed: 5.2.1]
+│   ├── ipython_pygments_lexers [required: Any, installed: 1.1.1]
+│   │   └── Pygments [required: Any, installed: 2.19.2]
+│   ├── jedi [required: >=0.16, installed: 0.19.2]
+│   │   └── parso [required: >=0.8.4,<0.9.0, installed: 0.8.5]
+│   ├── matplotlib-inline [required: Any, installed: 0.1.7]
+│   │   └── traitlets [required: Any, installed: 5.14.3]
+│   ├── prompt_toolkit [required: >=3.0.41,<3.1.0, installed: 3.0.52]
+│   │   └── wcwidth [required: Any, installed: 0.2.14]
+│   ├── Pygments [required: >=2.4.0, installed: 2.19.2]
+│   ├── stack_data [required: Any, installed: 0.6.3]
+│   │   ├── executing [required: >=1.2.0, installed: 2.2.1]
+│   │   ├── asttokens [required: >=2.1.0, installed: 3.0.0]
+│   │   └── pure_eval [required: Any, installed: 0.2.3]
+│   ├── traitlets [required: >=5.13.0, installed: 5.14.3]
+│   └── typing_extensions [required: >=4.6, installed: 4.15.0]
+├── jupyter_client [required: >=8.0.0, installed: 8.6.3]
+│   ├── jupyter_core [required: >=4.12,!=5.0.*, installed: 5.9.1]
+│   │   ├── platformdirs [required: >=2.5, installed: 4.5.0]
+│   │   └── traitlets [required: >=5.3, installed: 5.14.3]
+│   ├── python-dateutil [required: >=2.8.2, installed: 2.9.0.post0]
+│   │   └── six [required: >=1.5, installed: 1.17.0]
+│   ├── pyzmq [required: >=23.0, installed: 27.1.0]
+│   ├── tornado [required: >=6.2, installed: 6.5.2]
+│   └── traitlets [required: >=5.3, installed: 5.14.3]
+├── jupyter_core [required: >=4.12,!=5.0.*, installed: 5.9.1]
+│   ├── platformdirs [required: >=2.5, installed: 4.5.0]
+│   └── traitlets [required: >=5.3, installed: 5.14.3]
+├── matplotlib-inline [required: >=0.1, installed: 0.1.7]
+│   └── traitlets [required: Any, installed: 5.14.3]
+├── nest_asyncio [required: >=1.4, installed: 1.6.0]
+├── packaging [required: >=22, installed: 25.0]
+├── psutil [required: >=5.7, installed: 7.1.1]
+├── pyzmq [required: >=25, installed: 27.1.0]
+├── tornado [required: >=6.2, installed: 6.5.2]
+└── traitlets [required: >=5.4.0, installed: 5.14.3]
+ipywidgets==8.1.7
+├── comm [required: >=0.1.3, installed: 0.2.3]
+├── ipython [required: >=6.1.0, installed: 9.6.0]
+│   ├── colorama [required: Any, installed: 0.4.6]
+│   ├── decorator [required: Any, installed: 5.2.1]
+│   ├── ipython_pygments_lexers [required: Any, installed: 1.1.1]
+│   │   └── Pygments [required: Any, installed: 2.19.2]
+│   ├── jedi [required: >=0.16, installed: 0.19.2]
+│   │   └── parso [required: >=0.8.4,<0.9.0, installed: 0.8.5]
+│   ├── matplotlib-inline [required: Any, installed: 0.1.7]
+│   │   └── traitlets [required: Any, installed: 5.14.3]
+│   ├── prompt_toolkit [required: >=3.0.41,<3.1.0, installed: 3.0.52]
+│   │   └── wcwidth [required: Any, installed: 0.2.14]
+│   ├── Pygments [required: >=2.4.0, installed: 2.19.2]
+│   ├── stack_data [required: Any, installed: 0.6.3]
+│   │   ├── executing [required: >=1.2.0, installed: 2.2.1]
+│   │   ├── asttokens [required: >=2.1.0, installed: 3.0.0]
+│   │   └── pure_eval [required: Any, installed: 0.2.3]
+│   ├── traitlets [required: >=5.13.0, installed: 5.14.3]
+│   └── typing_extensions [required: >=4.6, installed: 4.15.0]
+├── traitlets [required: >=4.3.1, installed: 5.14.3]
+├── widgetsnbextension [required: ~=4.0.14, installed: 4.0.14]
+└── jupyterlab_widgets [required: ~=3.0.15, installed: 3.0.15]
+llama_cpp_python==0.3.16
+├── typing_extensions [required: >=4.5.0, installed: 4.15.0]
+├── numpy [required: >=1.20.0, installed: 2.3.4]
+├── diskcache [required: >=5.6.1, installed: 5.6.3]
+└── Jinja2 [required: >=2.11.3, installed: 3.1.6]
+    └── MarkupSafe [required: >=2.0, installed: 3.0.2]
+mkl_fft==1.3.11
+├── numpy [required: >=1.16, installed: 2.3.4]
+└── mkl-service [required: Any, installed: 2.4.0]
+mkl_random==1.2.8
+└── numpy [required: >=1.16, installed: 2.3.4]
+pickleshare==0.7.5
+pip-conflict-checker==0.6.0
+├── pip [required: >=1.4.1, installed: 25.2]
+├── nose [required: >=1.3.0, installed: 1.3.7]
+├── mock [required: >=1.0.1, installed: 5.2.0]
+├── flake8 [required: Any, installed: 7.3.0]
+│   ├── mccabe [required: >=0.7.0,<0.8.0, installed: 0.7.0]
+│   ├── pycodestyle [required: >=2.14.0,<2.15.0, installed: 2.14.0]
+│   └── pyflakes [required: >=3.4.0,<3.5.0, installed: 3.4.0]
+└── coverage [required: Any, installed: 7.11.0]
+pipdeptree==2.29.0
+├── packaging [required: >=25, installed: 25.0]
+└── pip [required: >=25.2, installed: 25.2]
+pycountry==24.6.1
+PySocks==1.7.1
+PySoundFile==0.9.0.post1
+└── cffi [required: >=0.6, installed: 2.0.0]
+    └── pycparser [required: Any, installed: 2.23]
+pywin32==311
+scikit-learn==1.7.2
+├── numpy [required: >=1.22.0, installed: 2.3.4]
+├── scipy [required: >=1.8.0, installed: 1.16.2]
+│   └── numpy [required: >=1.25.2,<2.6, installed: 2.3.4]
+├── joblib [required: >=1.2.0, installed: 1.5.2]
+└── threadpoolctl [required: >=3.1.0, installed: 3.6.0]
+soundfile==0.13.1
+├── cffi [required: >=1.0, installed: 2.0.0]
+│   └── pycparser [required: Any, installed: 2.23]
+└── numpy [required: Any, installed: 2.3.4]
+speechbrain==1.0.3
+├── HyperPyYAML [required: Any, installed: 1.2.2]
+│   ├── PyYAML [required: >=5.1, installed: 6.0.2]
+│   └── ruamel.yaml [required: >=0.17.28, installed: 0.18.15]
+│       └── ruamel.yaml.clib [required: >=0.2.7, installed: 0.2.14]
+├── joblib [required: Any, installed: 1.5.2]
+├── numpy [required: Any, installed: 2.3.4]
+├── packaging [required: Any, installed: 25.0]
+├── scipy [required: Any, installed: 1.16.2]
+│   └── numpy [required: >=1.25.2,<2.6, installed: 2.3.4]
+├── sentencepiece [required: Any, installed: 0.2.1]
+├── torch [required: >=1.9, installed: 2.8.0+cu126]
+│   ├── filelock [required: Any, installed: 3.17.0]
+│   ├── typing_extensions [required: >=4.10.0, installed: 4.15.0]
+│   ├── sympy [required: >=1.13.3, installed: 1.14.0]
+│   │   └── mpmath [required: >=1.1.0,<1.4, installed: 1.3.0]
+│   ├── networkx [required: Any, installed: 3.5]
+│   ├── Jinja2 [required: Any, installed: 3.1.6]
+│   │   └── MarkupSafe [required: >=2.0, installed: 3.0.2]
+│   └── fsspec [required: Any, installed: 2025.9.0]
+├── torchaudio [required: Any, installed: 2.8.0+cu126]
+│   └── torch [required: ==2.8.0+cu126, installed: 2.8.0+cu126]
+│       ├── filelock [required: Any, installed: 3.17.0]
+│       ├── typing_extensions [required: >=4.10.0, installed: 4.15.0]
+│       ├── sympy [required: >=1.13.3, installed: 1.14.0]
+│       │   └── mpmath [required: >=1.1.0,<1.4, installed: 1.3.0]
+│       ├── networkx [required: Any, installed: 3.5]
+│       ├── Jinja2 [required: Any, installed: 3.1.6]
+│       │   └── MarkupSafe [required: >=2.0, installed: 3.0.2]
+│       └── fsspec [required: Any, installed: 2025.9.0]
+├── tqdm [required: Any, installed: 4.67.1]
+│   └── colorama [required: Any, installed: 0.4.6]
+└── huggingface-hub [required: Any, installed: 0.35.3]
+    ├── filelock [required: Any, installed: 3.17.0]
+    ├── fsspec [required: >=2023.5.0, installed: 2025.9.0]
+    ├── packaging [required: >=20.9, installed: 25.0]
+    ├── PyYAML [required: >=5.1, installed: 6.0.2]
+    ├── requests [required: Any, installed: 2.32.5]
+    │   ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+    │   ├── idna [required: >=2.5,<4, installed: 3.7]
+    │   ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+    │   └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+    ├── tqdm [required: >=4.42.1, installed: 4.67.1]
+    │   └── colorama [required: Any, installed: 0.4.6]
+    └── typing_extensions [required: >=3.7.4.3, installed: 4.15.0]
+unsloth==2025.10.7
+├── unsloth_zoo [required: >=2025.10.8, installed: 2025.10.8]
+│   ├── torch [required: >=2.4.0, installed: 2.8.0+cu126]
+│   │   ├── filelock [required: Any, installed: 3.17.0]
+│   │   ├── typing_extensions [required: >=4.10.0, installed: 4.15.0]
+│   │   ├── sympy [required: >=1.13.3, installed: 1.14.0]
+│   │   │   └── mpmath [required: >=1.1.0,<1.4, installed: 1.3.0]
+│   │   ├── networkx [required: Any, installed: 3.5]
+│   │   ├── Jinja2 [required: Any, installed: 3.1.6]
+│   │   │   └── MarkupSafe [required: >=2.0, installed: 3.0.2]
+│   │   └── fsspec [required: Any, installed: 2025.9.0]
+│   ├── torchao [required: >=0.13.0,!=0.14.0, installed: 0.13.0]
+│   ├── triton-windows [required: Any, installed: 3.5.0.post21]
+│   ├── packaging [required: >=24.1, installed: 25.0]
+│   ├── tyro [required: Any, installed: 0.9.35]
+│   │   ├── colorama [required: >=0.4.0, installed: 0.4.6]
+│   │   ├── docstring_parser [required: >=0.15, installed: 0.17.0]
+│   │   ├── rich [required: >=11.1.0, installed: 14.2.0]
+│   │   │   ├── markdown-it-py [required: >=2.2.0, installed: 4.0.0]
+│   │   │   │   └── mdurl [required: ~=0.1, installed: 0.1.2]
+│   │   │   └── Pygments [required: >=2.13.0,<3.0.0, installed: 2.19.2]
+│   │   ├── shtab [required: >=1.5.6, installed: 1.7.2]
+│   │   ├── typeguard [required: >=4.0.0, installed: 4.4.4]
+│   │   │   └── typing_extensions [required: >=4.14.0, installed: 4.15.0]
+│   │   └── typing_extensions [required: >=4.13.0, installed: 4.15.0]
+│   ├── transformers [required: >=4.51.3,<=4.56.2,!=4.55.1,!=4.55.0,!=4.54.0,!=4.53.0,!=4.52.3,!=4.52.2,!=4.52.1,!=4.52.0, installed: 4.56.2]
+│   │   ├── filelock [required: Any, installed: 3.17.0]
+│   │   ├── huggingface-hub [required: >=0.34.0,<1.0, installed: 0.35.3]
+│   │   │   ├── filelock [required: Any, installed: 3.17.0]
+│   │   │   ├── fsspec [required: >=2023.5.0, installed: 2025.9.0]
+│   │   │   ├── packaging [required: >=20.9, installed: 25.0]
+│   │   │   ├── PyYAML [required: >=5.1, installed: 6.0.2]
+│   │   │   ├── requests [required: Any, installed: 2.32.5]
+│   │   │   │   ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+│   │   │   │   ├── idna [required: >=2.5,<4, installed: 3.7]
+│   │   │   │   ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+│   │   │   │   └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+│   │   │   ├── tqdm [required: >=4.42.1, installed: 4.67.1]
+│   │   │   │   └── colorama [required: Any, installed: 0.4.6]
+│   │   │   └── typing_extensions [required: >=3.7.4.3, installed: 4.15.0]
+│   │   ├── numpy [required: >=1.17, installed: 2.3.4]
+│   │   ├── packaging [required: >=20.0, installed: 25.0]
+│   │   ├── PyYAML [required: >=5.1, installed: 6.0.2]
+│   │   ├── regex [required: !=2019.12.17, installed: 2025.10.23]
+│   │   ├── requests [required: Any, installed: 2.32.5]
+│   │   │   ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+│   │   │   ├── idna [required: >=2.5,<4, installed: 3.7]
+│   │   │   ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+│   │   │   └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+│   │   ├── tokenizers [required: >=0.22.0,<=0.23.0, installed: 0.22.1]
+│   │   │   └── huggingface-hub [required: >=0.16.4,<2.0, installed: 0.35.3]
+│   │   │       ├── filelock [required: Any, installed: 3.17.0]
+│   │   │       ├── fsspec [required: >=2023.5.0, installed: 2025.9.0]
+│   │   │       ├── packaging [required: >=20.9, installed: 25.0]
+│   │   │       ├── PyYAML [required: >=5.1, installed: 6.0.2]
+│   │   │       ├── requests [required: Any, installed: 2.32.5]
+│   │   │       │   ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+│   │   │       │   ├── idna [required: >=2.5,<4, installed: 3.7]
+│   │   │       │   ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+│   │   │       │   └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+│   │   │       ├── tqdm [required: >=4.42.1, installed: 4.67.1]
+│   │   │       │   └── colorama [required: Any, installed: 0.4.6]
+│   │   │       └── typing_extensions [required: >=3.7.4.3, installed: 4.15.0]
+│   │   ├── safetensors [required: >=0.4.3, installed: 0.6.2]
+│   │   └── tqdm [required: >=4.27, installed: 4.67.1]
+│   │       └── colorama [required: Any, installed: 0.4.6]
+│   ├── datasets [required: >=3.4.1,!=4.1.0,!=4.0.*, installed: 4.2.0]
+│   │   ├── filelock [required: Any, installed: 3.17.0]
+│   │   ├── numpy [required: >=1.17, installed: 2.3.4]
+│   │   ├── pyarrow [required: >=21.0.0, installed: 21.0.0]
+│   │   ├── dill [required: >=0.3.0,<0.4.1, installed: 0.4.0]
+│   │   ├── pandas [required: Any, installed: 2.3.3]
+│   │   │   ├── numpy [required: >=1.23.2, installed: 2.3.4]
+│   │   │   ├── python-dateutil [required: >=2.8.2, installed: 2.9.0.post0]
+│   │   │   │   └── six [required: >=1.5, installed: 1.17.0]
+│   │   │   ├── pytz [required: >=2020.1, installed: 2025.2]
+│   │   │   └── tzdata [required: >=2022.7, installed: 2025.2]
+│   │   ├── requests [required: >=2.32.2, installed: 2.32.5]
+│   │   │   ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+│   │   │   ├── idna [required: >=2.5,<4, installed: 3.7]
+│   │   │   ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+│   │   │   └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+│   │   ├── httpx [required: <1.0.0, installed: 0.28.1]
+│   │   │   ├── anyio [required: Any, installed: 4.11.0]
+│   │   │   │   ├── idna [required: >=2.8, installed: 3.7]
+│   │   │   │   ├── sniffio [required: >=1.1, installed: 1.3.1]
+│   │   │   │   └── typing_extensions [required: >=4.5, installed: 4.15.0]
+│   │   │   ├── certifi [required: Any, installed: 2025.10.5]
+│   │   │   ├── httpcore [required: ==1.*, installed: 1.0.9]
+│   │   │   │   ├── certifi [required: Any, installed: 2025.10.5]
+│   │   │   │   └── h11 [required: >=0.16, installed: 0.16.0]
+│   │   │   └── idna [required: Any, installed: 3.7]
+│   │   ├── tqdm [required: >=4.66.3, installed: 4.67.1]
+│   │   │   └── colorama [required: Any, installed: 0.4.6]
+│   │   ├── xxhash [required: Any, installed: 3.6.0]
+│   │   ├── multiprocess [required: <0.70.17, installed: 0.70.16]
+│   │   │   └── dill [required: >=0.3.8, installed: 0.4.0]
+│   │   ├── fsspec [required: >=2023.1.0,<=2025.9.0, installed: 2025.9.0]
+│   │   ├── huggingface-hub [required: >=0.25.0,<2.0, installed: 0.35.3]
+│   │   │   ├── filelock [required: Any, installed: 3.17.0]
+│   │   │   ├── fsspec [required: >=2023.5.0, installed: 2025.9.0]
+│   │   │   ├── packaging [required: >=20.9, installed: 25.0]
+│   │   │   ├── PyYAML [required: >=5.1, installed: 6.0.2]
+│   │   │   ├── requests [required: Any, installed: 2.32.5]
+│   │   │   │   ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+│   │   │   │   ├── idna [required: >=2.5,<4, installed: 3.7]
+│   │   │   │   ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+│   │   │   │   └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+│   │   │   ├── tqdm [required: >=4.42.1, installed: 4.67.1]
+│   │   │   │   └── colorama [required: Any, installed: 0.4.6]
+│   │   │   └── typing_extensions [required: >=3.7.4.3, installed: 4.15.0]
+│   │   ├── packaging [required: Any, installed: 25.0]
+│   │   └── PyYAML [required: >=5.1, installed: 6.0.2]
+│   ├── sentencepiece [required: >=0.2.0, installed: 0.2.1]
+│   ├── tqdm [required: Any, installed: 4.67.1]
+│   │   └── colorama [required: Any, installed: 0.4.6]
+│   ├── psutil [required: Any, installed: 7.1.1]
+│   ├── wheel [required: >=0.42.0, installed: 0.45.1]
+│   ├── numpy [required: Any, installed: 2.3.4]
+│   ├── accelerate [required: >=0.34.1, installed: 1.11.0]
+│   │   ├── numpy [required: >=1.17, installed: 2.3.4]
+│   │   ├── packaging [required: >=20.0, installed: 25.0]
+│   │   ├── psutil [required: Any, installed: 7.1.1]
+│   │   ├── PyYAML [required: Any, installed: 6.0.2]
+│   │   ├── torch [required: >=2.0.0, installed: 2.8.0+cu126]
+│   │   │   ├── filelock [required: Any, installed: 3.17.0]
+│   │   │   ├── typing_extensions [required: >=4.10.0, installed: 4.15.0]
+│   │   │   ├── sympy [required: >=1.13.3, installed: 1.14.0]
+│   │   │   │   └── mpmath [required: >=1.1.0,<1.4, installed: 1.3.0]
+│   │   │   ├── networkx [required: Any, installed: 3.5]
+│   │   │   ├── Jinja2 [required: Any, installed: 3.1.6]
+│   │   │   │   └── MarkupSafe [required: >=2.0, installed: 3.0.2]
+│   │   │   └── fsspec [required: Any, installed: 2025.9.0]
+│   │   ├── huggingface-hub [required: >=0.21.0, installed: 0.35.3]
+│   │   │   ├── filelock [required: Any, installed: 3.17.0]
+│   │   │   ├── fsspec [required: >=2023.5.0, installed: 2025.9.0]
+│   │   │   ├── packaging [required: >=20.9, installed: 25.0]
+│   │   │   ├── PyYAML [required: >=5.1, installed: 6.0.2]
+│   │   │   ├── requests [required: Any, installed: 2.32.5]
+│   │   │   │   ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+│   │   │   │   ├── idna [required: >=2.5,<4, installed: 3.7]
+│   │   │   │   ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+│   │   │   │   └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+│   │   │   ├── tqdm [required: >=4.42.1, installed: 4.67.1]
+│   │   │   │   └── colorama [required: Any, installed: 0.4.6]
+│   │   │   └── typing_extensions [required: >=3.7.4.3, installed: 4.15.0]
+│   │   └── safetensors [required: >=0.4.3, installed: 0.6.2]
+│   ├── trl [required: >=0.7.9,<=0.23.0,!=0.9.3,!=0.9.2,!=0.9.1,!=0.9.0,!=0.19.0,!=0.15.0, installed: 0.23.0]
+│   │   ├── accelerate [required: >=1.4.0, installed: 1.11.0]
+│   │   │   ├── numpy [required: >=1.17, installed: 2.3.4]
+│   │   │   ├── packaging [required: >=20.0, installed: 25.0]
+│   │   │   ├── psutil [required: Any, installed: 7.1.1]
+│   │   │   ├── PyYAML [required: Any, installed: 6.0.2]
+│   │   │   ├── torch [required: >=2.0.0, installed: 2.8.0+cu126]
+│   │   │   │   ├── filelock [required: Any, installed: 3.17.0]
+│   │   │   │   ├── typing_extensions [required: >=4.10.0, installed: 4.15.0]
+│   │   │   │   ├── sympy [required: >=1.13.3, installed: 1.14.0]
+│   │   │   │   │   └── mpmath [required: >=1.1.0,<1.4, installed: 1.3.0]
+│   │   │   │   ├── networkx [required: Any, installed: 3.5]
+│   │   │   │   ├── Jinja2 [required: Any, installed: 3.1.6]
+│   │   │   │   │   └── MarkupSafe [required: >=2.0, installed: 3.0.2]
+│   │   │   │   └── fsspec [required: Any, installed: 2025.9.0]
+│   │   │   ├── huggingface-hub [required: >=0.21.0, installed: 0.35.3]
+│   │   │   │   ├── filelock [required: Any, installed: 3.17.0]
+│   │   │   │   ├── fsspec [required: >=2023.5.0, installed: 2025.9.0]
+│   │   │   │   ├── packaging [required: >=20.9, installed: 25.0]
+│   │   │   │   ├── PyYAML [required: >=5.1, installed: 6.0.2]
+│   │   │   │   ├── requests [required: Any, installed: 2.32.5]
+│   │   │   │   │   ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+│   │   │   │   │   ├── idna [required: >=2.5,<4, installed: 3.7]
+│   │   │   │   │   ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+│   │   │   │   │   └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+│   │   │   │   ├── tqdm [required: >=4.42.1, installed: 4.67.1]
+│   │   │   │   │   └── colorama [required: Any, installed: 0.4.6]
+│   │   │   │   └── typing_extensions [required: >=3.7.4.3, installed: 4.15.0]
+│   │   │   └── safetensors [required: >=0.4.3, installed: 0.6.2]
+│   │   ├── datasets [required: >=3.0.0, installed: 4.2.0]
+│   │   │   ├── filelock [required: Any, installed: 3.17.0]
+│   │   │   ├── numpy [required: >=1.17, installed: 2.3.4]
+│   │   │   ├── pyarrow [required: >=21.0.0, installed: 21.0.0]
+│   │   │   ├── dill [required: >=0.3.0,<0.4.1, installed: 0.4.0]
+│   │   │   ├── pandas [required: Any, installed: 2.3.3]
+│   │   │   │   ├── numpy [required: >=1.23.2, installed: 2.3.4]
+│   │   │   │   ├── python-dateutil [required: >=2.8.2, installed: 2.9.0.post0]
+│   │   │   │   │   └── six [required: >=1.5, installed: 1.17.0]
+│   │   │   │   ├── pytz [required: >=2020.1, installed: 2025.2]
+│   │   │   │   └── tzdata [required: >=2022.7, installed: 2025.2]
+│   │   │   ├── requests [required: >=2.32.2, installed: 2.32.5]
+│   │   │   │   ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+│   │   │   │   ├── idna [required: >=2.5,<4, installed: 3.7]
+│   │   │   │   ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+│   │   │   │   └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+│   │   │   ├── httpx [required: <1.0.0, installed: 0.28.1]
+│   │   │   │   ├── anyio [required: Any, installed: 4.11.0]
+│   │   │   │   │   ├── idna [required: >=2.8, installed: 3.7]
+│   │   │   │   │   ├── sniffio [required: >=1.1, installed: 1.3.1]
+│   │   │   │   │   └── typing_extensions [required: >=4.5, installed: 4.15.0]
+│   │   │   │   ├── certifi [required: Any, installed: 2025.10.5]
+│   │   │   │   ├── httpcore [required: ==1.*, installed: 1.0.9]
+│   │   │   │   │   ├── certifi [required: Any, installed: 2025.10.5]
+│   │   │   │   │   └── h11 [required: >=0.16, installed: 0.16.0]
+│   │   │   │   └── idna [required: Any, installed: 3.7]
+│   │   │   ├── tqdm [required: >=4.66.3, installed: 4.67.1]
+│   │   │   │   └── colorama [required: Any, installed: 0.4.6]
+│   │   │   ├── xxhash [required: Any, installed: 3.6.0]
+│   │   │   ├── multiprocess [required: <0.70.17, installed: 0.70.16]
+│   │   │   │   └── dill [required: >=0.3.8, installed: 0.4.0]
+│   │   │   ├── fsspec [required: >=2023.1.0,<=2025.9.0, installed: 2025.9.0]
+│   │   │   ├── huggingface-hub [required: >=0.25.0,<2.0, installed: 0.35.3]
+│   │   │   │   ├── filelock [required: Any, installed: 3.17.0]
+│   │   │   │   ├── fsspec [required: >=2023.5.0, installed: 2025.9.0]
+│   │   │   │   ├── packaging [required: >=20.9, installed: 25.0]
+│   │   │   │   ├── PyYAML [required: >=5.1, installed: 6.0.2]
+│   │   │   │   ├── requests [required: Any, installed: 2.32.5]
+│   │   │   │   │   ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+│   │   │   │   │   ├── idna [required: >=2.5,<4, installed: 3.7]
+│   │   │   │   │   ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+│   │   │   │   │   └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+│   │   │   │   ├── tqdm [required: >=4.42.1, installed: 4.67.1]
+│   │   │   │   │   └── colorama [required: Any, installed: 0.4.6]
+│   │   │   │   └── typing_extensions [required: >=3.7.4.3, installed: 4.15.0]
+│   │   │   ├── packaging [required: Any, installed: 25.0]
+│   │   │   └── PyYAML [required: >=5.1, installed: 6.0.2]
+│   │   └── transformers [required: >=4.56.1, installed: 4.56.2]
+│   │       ├── filelock [required: Any, installed: 3.17.0]
+│   │       ├── huggingface-hub [required: >=0.34.0,<1.0, installed: 0.35.3]
+│   │       │   ├── filelock [required: Any, installed: 3.17.0]
+│   │       │   ├── fsspec [required: >=2023.5.0, installed: 2025.9.0]
+│   │       │   ├── packaging [required: >=20.9, installed: 25.0]
+│   │       │   ├── PyYAML [required: >=5.1, installed: 6.0.2]
+│   │       │   ├── requests [required: Any, installed: 2.32.5]
+│   │       │   │   ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+│   │       │   │   ├── idna [required: >=2.5,<4, installed: 3.7]
+│   │       │   │   ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+│   │       │   │   └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+│   │       │   ├── tqdm [required: >=4.42.1, installed: 4.67.1]
+│   │       │   │   └── colorama [required: Any, installed: 0.4.6]
+│   │       │   └── typing_extensions [required: >=3.7.4.3, installed: 4.15.0]
+│   │       ├── numpy [required: >=1.17, installed: 2.3.4]
+│   │       ├── packaging [required: >=20.0, installed: 25.0]
+│   │       ├── PyYAML [required: >=5.1, installed: 6.0.2]
+│   │       ├── regex [required: !=2019.12.17, installed: 2025.10.23]
+│   │       ├── requests [required: Any, installed: 2.32.5]
+│   │       │   ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+│   │       │   ├── idna [required: >=2.5,<4, installed: 3.7]
+│   │       │   ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+│   │       │   └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+│   │       ├── tokenizers [required: >=0.22.0,<=0.23.0, installed: 0.22.1]
+│   │       │   └── huggingface-hub [required: >=0.16.4,<2.0, installed: 0.35.3]
+│   │       │       ├── filelock [required: Any, installed: 3.17.0]
+│   │       │       ├── fsspec [required: >=2023.5.0, installed: 2025.9.0]
+│   │       │       ├── packaging [required: >=20.9, installed: 25.0]
+│   │       │       ├── PyYAML [required: >=5.1, installed: 6.0.2]
+│   │       │       ├── requests [required: Any, installed: 2.32.5]
+│   │       │       │   ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+│   │       │       │   ├── idna [required: >=2.5,<4, installed: 3.7]
+│   │       │       │   ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+│   │       │       │   └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+│   │       │       ├── tqdm [required: >=4.42.1, installed: 4.67.1]
+│   │       │       │   └── colorama [required: Any, installed: 0.4.6]
+│   │       │       └── typing_extensions [required: >=3.7.4.3, installed: 4.15.0]
+│   │       ├── safetensors [required: >=0.4.3, installed: 0.6.2]
+│   │       └── tqdm [required: >=4.27, installed: 4.67.1]
+│   │           └── colorama [required: Any, installed: 0.4.6]
+│   ├── peft [required: >=0.7.1,!=0.11.0, installed: 0.17.1]
+│   │   ├── numpy [required: >=1.17, installed: 2.3.4]
+│   │   ├── packaging [required: >=20.0, installed: 25.0]
+│   │   ├── psutil [required: Any, installed: 7.1.1]
+│   │   ├── PyYAML [required: Any, installed: 6.0.2]
+│   │   ├── torch [required: >=1.13.0, installed: 2.8.0+cu126]
+│   │   │   ├── filelock [required: Any, installed: 3.17.0]
+│   │   │   ├── typing_extensions [required: >=4.10.0, installed: 4.15.0]
+│   │   │   ├── sympy [required: >=1.13.3, installed: 1.14.0]
+│   │   │   │   └── mpmath [required: >=1.1.0,<1.4, installed: 1.3.0]
+│   │   │   ├── networkx [required: Any, installed: 3.5]
+│   │   │   ├── Jinja2 [required: Any, installed: 3.1.6]
+│   │   │   │   └── MarkupSafe [required: >=2.0, installed: 3.0.2]
+│   │   │   └── fsspec [required: Any, installed: 2025.9.0]
+│   │   ├── transformers [required: Any, installed: 4.56.2]
+│   │   │   ├── filelock [required: Any, installed: 3.17.0]
+│   │   │   ├── huggingface-hub [required: >=0.34.0,<1.0, installed: 0.35.3]
+│   │   │   │   ├── filelock [required: Any, installed: 3.17.0]
+│   │   │   │   ├── fsspec [required: >=2023.5.0, installed: 2025.9.0]
+│   │   │   │   ├── packaging [required: >=20.9, installed: 25.0]
+│   │   │   │   ├── PyYAML [required: >=5.1, installed: 6.0.2]
+│   │   │   │   ├── requests [required: Any, installed: 2.32.5]
+│   │   │   │   │   ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+│   │   │   │   │   ├── idna [required: >=2.5,<4, installed: 3.7]
+│   │   │   │   │   ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+│   │   │   │   │   └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+│   │   │   │   ├── tqdm [required: >=4.42.1, installed: 4.67.1]
+│   │   │   │   │   └── colorama [required: Any, installed: 0.4.6]
+│   │   │   │   └── typing_extensions [required: >=3.7.4.3, installed: 4.15.0]
+│   │   │   ├── numpy [required: >=1.17, installed: 2.3.4]
+│   │   │   ├── packaging [required: >=20.0, installed: 25.0]
+│   │   │   ├── PyYAML [required: >=5.1, installed: 6.0.2]
+│   │   │   ├── regex [required: !=2019.12.17, installed: 2025.10.23]
+│   │   │   ├── requests [required: Any, installed: 2.32.5]
+│   │   │   │   ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+│   │   │   │   ├── idna [required: >=2.5,<4, installed: 3.7]
+│   │   │   │   ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+│   │   │   │   └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+│   │   │   ├── tokenizers [required: >=0.22.0,<=0.23.0, installed: 0.22.1]
+│   │   │   │   └── huggingface-hub [required: >=0.16.4,<2.0, installed: 0.35.3]
+│   │   │   │       ├── filelock [required: Any, installed: 3.17.0]
+│   │   │   │       ├── fsspec [required: >=2023.5.0, installed: 2025.9.0]
+│   │   │   │       ├── packaging [required: >=20.9, installed: 25.0]
+│   │   │   │       ├── PyYAML [required: >=5.1, installed: 6.0.2]
+│   │   │   │       ├── requests [required: Any, installed: 2.32.5]
+│   │   │   │       │   ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+│   │   │   │       │   ├── idna [required: >=2.5,<4, installed: 3.7]
+│   │   │   │       │   ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+│   │   │   │       │   └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+│   │   │   │       ├── tqdm [required: >=4.42.1, installed: 4.67.1]
+│   │   │   │       │   └── colorama [required: Any, installed: 0.4.6]
+│   │   │   │       └── typing_extensions [required: >=3.7.4.3, installed: 4.15.0]
+│   │   │   ├── safetensors [required: >=0.4.3, installed: 0.6.2]
+│   │   │   └── tqdm [required: >=4.27, installed: 4.67.1]
+│   │   │       └── colorama [required: Any, installed: 0.4.6]
+│   │   ├── tqdm [required: Any, installed: 4.67.1]
+│   │   │   └── colorama [required: Any, installed: 0.4.6]
+│   │   ├── accelerate [required: >=0.21.0, installed: 1.11.0]
+│   │   │   ├── numpy [required: >=1.17, installed: 2.3.4]
+│   │   │   ├── packaging [required: >=20.0, installed: 25.0]
+│   │   │   ├── psutil [required: Any, installed: 7.1.1]
+│   │   │   ├── PyYAML [required: Any, installed: 6.0.2]
+│   │   │   ├── torch [required: >=2.0.0, installed: 2.8.0+cu126]
+│   │   │   │   ├── filelock [required: Any, installed: 3.17.0]
+│   │   │   │   ├── typing_extensions [required: >=4.10.0, installed: 4.15.0]
+│   │   │   │   ├── sympy [required: >=1.13.3, installed: 1.14.0]
+│   │   │   │   │   └── mpmath [required: >=1.1.0,<1.4, installed: 1.3.0]
+│   │   │   │   ├── networkx [required: Any, installed: 3.5]
+│   │   │   │   ├── Jinja2 [required: Any, installed: 3.1.6]
+│   │   │   │   │   └── MarkupSafe [required: >=2.0, installed: 3.0.2]
+│   │   │   │   └── fsspec [required: Any, installed: 2025.9.0]
+│   │   │   ├── huggingface-hub [required: >=0.21.0, installed: 0.35.3]
+│   │   │   │   ├── filelock [required: Any, installed: 3.17.0]
+│   │   │   │   ├── fsspec [required: >=2023.5.0, installed: 2025.9.0]
+│   │   │   │   ├── packaging [required: >=20.9, installed: 25.0]
+│   │   │   │   ├── PyYAML [required: >=5.1, installed: 6.0.2]
+│   │   │   │   ├── requests [required: Any, installed: 2.32.5]
+│   │   │   │   │   ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+│   │   │   │   │   ├── idna [required: >=2.5,<4, installed: 3.7]
+│   │   │   │   │   ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+│   │   │   │   │   └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+│   │   │   │   ├── tqdm [required: >=4.42.1, installed: 4.67.1]
+│   │   │   │   │   └── colorama [required: Any, installed: 0.4.6]
+│   │   │   │   └── typing_extensions [required: >=3.7.4.3, installed: 4.15.0]
+│   │   │   └── safetensors [required: >=0.4.3, installed: 0.6.2]
+│   │   ├── safetensors [required: Any, installed: 0.6.2]
+│   │   └── huggingface-hub [required: >=0.25.0, installed: 0.35.3]
+│   │       ├── filelock [required: Any, installed: 3.17.0]
+│   │       ├── fsspec [required: >=2023.5.0, installed: 2025.9.0]
+│   │       ├── packaging [required: >=20.9, installed: 25.0]
+│   │       ├── PyYAML [required: >=5.1, installed: 6.0.2]
+│   │       ├── requests [required: Any, installed: 2.32.5]
+│   │       │   ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+│   │       │   ├── idna [required: >=2.5,<4, installed: 3.7]
+│   │       │   ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+│   │       │   └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+│   │       ├── tqdm [required: >=4.42.1, installed: 4.67.1]
+│   │       │   └── colorama [required: Any, installed: 0.4.6]
+│   │       └── typing_extensions [required: >=3.7.4.3, installed: 4.15.0]
+│   ├── protobuf [required: Any, installed: 6.33.0]
+│   ├── huggingface-hub [required: >=0.34.0, installed: 0.35.3]
+│   │   ├── filelock [required: Any, installed: 3.17.0]
+│   │   ├── fsspec [required: >=2023.5.0, installed: 2025.9.0]
+│   │   ├── packaging [required: >=20.9, installed: 25.0]
+│   │   ├── PyYAML [required: >=5.1, installed: 6.0.2]
+│   │   ├── requests [required: Any, installed: 2.32.5]
+│   │   │   ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+│   │   │   ├── idna [required: >=2.5,<4, installed: 3.7]
+│   │   │   ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+│   │   │   └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+│   │   ├── tqdm [required: >=4.42.1, installed: 4.67.1]
+│   │   │   └── colorama [required: Any, installed: 0.4.6]
+│   │   └── typing_extensions [required: >=3.7.4.3, installed: 4.15.0]
+│   ├── hf_transfer [required: Any, installed: 0.1.9]
+│   ├── cut-cross-entropy [required: Any, installed: 25.1.1]
+│   │   └── torch [required: Any, installed: 2.8.0+cu126]
+│   │       ├── filelock [required: Any, installed: 3.17.0]
+│   │       ├── typing_extensions [required: >=4.10.0, installed: 4.15.0]
+│   │       ├── sympy [required: >=1.13.3, installed: 1.14.0]
+│   │       │   └── mpmath [required: >=1.1.0,<1.4, installed: 1.3.0]
+│   │       ├── networkx [required: Any, installed: 3.5]
+│   │       ├── Jinja2 [required: Any, installed: 3.1.6]
+│   │       │   └── MarkupSafe [required: >=2.0, installed: 3.0.2]
+│   │       └── fsspec [required: Any, installed: 2025.9.0]
+│   ├── pillow [required: Any, installed: 11.1.0]
+│   ├── regex [required: Any, installed: 2025.10.23]
+│   ├── msgspec [required: Any, installed: 0.19.0]
+│   ├── typing_extensions [required: Any, installed: 4.15.0]
+│   ├── filelock [required: Any, installed: 3.17.0]
+│   └── mistral_common [required: Any, installed: 1.8.5]
+│       ├── pydantic [required: >=2.7,<3.0, installed: 2.12.3]
+│       │   ├── annotated-types [required: >=0.6.0, installed: 0.7.0]
+│       │   ├── pydantic_core [required: ==2.41.4, installed: 2.41.4]
+│       │   │   └── typing_extensions [required: >=4.14.1, installed: 4.15.0]
+│       │   ├── typing_extensions [required: >=4.14.1, installed: 4.15.0]
+│       │   └── typing-inspection [required: >=0.4.2, installed: 0.4.2]
+│       │       └── typing_extensions [required: >=4.12.0, installed: 4.15.0]
+│       ├── jsonschema [required: >=4.21.1, installed: 4.25.1]
+│       │   ├── attrs [required: >=22.2.0, installed: 25.4.0]
+│       │   ├── jsonschema-specifications [required: >=2023.03.6, installed: 2025.9.1]
+│       │   │   └── referencing [required: >=0.31.0, installed: 0.37.0]
+│       │   │       ├── attrs [required: >=22.2.0, installed: 25.4.0]
+│       │   │       ├── rpds-py [required: >=0.7.0, installed: 0.27.1]
+│       │   │       └── typing_extensions [required: >=4.4.0, installed: 4.15.0]
+│       │   ├── referencing [required: >=0.28.4, installed: 0.37.0]
+│       │   │   ├── attrs [required: >=22.2.0, installed: 25.4.0]
+│       │   │   ├── rpds-py [required: >=0.7.0, installed: 0.27.1]
+│       │   │   └── typing_extensions [required: >=4.4.0, installed: 4.15.0]
+│       │   └── rpds-py [required: >=0.7.1, installed: 0.27.1]
+│       ├── typing_extensions [required: >=4.11.0, installed: 4.15.0]
+│       ├── tiktoken [required: >=0.7.0, installed: 0.12.0]
+│       │   ├── regex [required: >=2022.1.18, installed: 2025.10.23]
+│       │   └── requests [required: >=2.26.0, installed: 2.32.5]
+│       │       ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+│       │       ├── idna [required: >=2.5,<4, installed: 3.7]
+│       │       ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+│       │       └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+│       ├── pillow [required: >=10.3.0, installed: 11.1.0]
+│       ├── requests [required: >=2.0.0, installed: 2.32.5]
+│       │   ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+│       │   ├── idna [required: >=2.5,<4, installed: 3.7]
+│       │   ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+│       │   └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+│       ├── numpy [required: >=1.25, installed: 2.3.4]
+│       └── pydantic-extra-types [required: >=2.10.5, installed: 2.10.6]
+│           ├── pydantic [required: >=2.5.2, installed: 2.12.3]
+│           │   ├── annotated-types [required: >=0.6.0, installed: 0.7.0]
+│           │   ├── pydantic_core [required: ==2.41.4, installed: 2.41.4]
+│           │   │   └── typing_extensions [required: >=4.14.1, installed: 4.15.0]
+│           │   ├── typing_extensions [required: >=4.14.1, installed: 4.15.0]
+│           │   └── typing-inspection [required: >=0.4.2, installed: 0.4.2]
+│           │       └── typing_extensions [required: >=4.12.0, installed: 4.15.0]
+│           └── typing_extensions [required: Any, installed: 4.15.0]
+├── wheel [required: >=0.42.0, installed: 0.45.1]
+├── packaging [required: Any, installed: 25.0]
+├── torch [required: >=2.4.0, installed: 2.8.0+cu126]
+│   ├── filelock [required: Any, installed: 3.17.0]
+│   ├── typing_extensions [required: >=4.10.0, installed: 4.15.0]
+│   ├── sympy [required: >=1.13.3, installed: 1.14.0]
+│   │   └── mpmath [required: >=1.1.0,<1.4, installed: 1.3.0]
+│   ├── networkx [required: Any, installed: 3.5]
+│   ├── Jinja2 [required: Any, installed: 3.1.6]
+│   │   └── MarkupSafe [required: >=2.0, installed: 3.0.2]
+│   └── fsspec [required: Any, installed: 2025.9.0]
+├── torchvision [required: Any, installed: 0.23.0+cu126]
+│   ├── numpy [required: Any, installed: 2.3.4]
+│   ├── torch [required: ==2.8.0+cu126, installed: 2.8.0+cu126]
+│   │   ├── filelock [required: Any, installed: 3.17.0]
+│   │   ├── typing_extensions [required: >=4.10.0, installed: 4.15.0]
+│   │   ├── sympy [required: >=1.13.3, installed: 1.14.0]
+│   │   │   └── mpmath [required: >=1.1.0,<1.4, installed: 1.3.0]
+│   │   ├── networkx [required: Any, installed: 3.5]
+│   │   ├── Jinja2 [required: Any, installed: 3.1.6]
+│   │   │   └── MarkupSafe [required: >=2.0, installed: 3.0.2]
+│   │   └── fsspec [required: Any, installed: 2025.9.0]
+│   └── pillow [required: >=5.3.0,!=8.3.*, installed: 11.1.0]
+├── numpy [required: Any, installed: 2.3.4]
+├── tqdm [required: Any, installed: 4.67.1]
+│   └── colorama [required: Any, installed: 0.4.6]
+├── psutil [required: Any, installed: 7.1.1]
+├── tyro [required: Any, installed: 0.9.35]
+│   ├── colorama [required: >=0.4.0, installed: 0.4.6]
+│   ├── docstring_parser [required: >=0.15, installed: 0.17.0]
+│   ├── rich [required: >=11.1.0, installed: 14.2.0]
+│   │   ├── markdown-it-py [required: >=2.2.0, installed: 4.0.0]
+│   │   │   └── mdurl [required: ~=0.1, installed: 0.1.2]
+│   │   └── Pygments [required: >=2.13.0,<3.0.0, installed: 2.19.2]
+│   ├── shtab [required: >=1.5.6, installed: 1.7.2]
+│   ├── typeguard [required: >=4.0.0, installed: 4.4.4]
+│   │   └── typing_extensions [required: >=4.14.0, installed: 4.15.0]
+│   └── typing_extensions [required: >=4.13.0, installed: 4.15.0]
+├── protobuf [required: Any, installed: 6.33.0]
+├── xformers [required: >=0.0.27.post2, installed: 0.0.32.post2]
+│   ├── numpy [required: Any, installed: 2.3.4]
+│   └── torch [required: ==2.8.0, installed: 2.8.0+cu126]
+│       ├── filelock [required: Any, installed: 3.17.0]
+│       ├── typing_extensions [required: >=4.10.0, installed: 4.15.0]
+│       ├── sympy [required: >=1.13.3, installed: 1.14.0]
+│       │   └── mpmath [required: >=1.1.0,<1.4, installed: 1.3.0]
+│       ├── networkx [required: Any, installed: 3.5]
+│       ├── Jinja2 [required: Any, installed: 3.1.6]
+│       │   └── MarkupSafe [required: >=2.0, installed: 3.0.2]
+│       └── fsspec [required: Any, installed: 2025.9.0]
+├── bitsandbytes [required: >=0.45.5,!=0.48.0,!=0.46.0, installed: 0.48.1]
+│   ├── torch [required: >=2.3,<3, installed: 2.8.0+cu126]
+│   │   ├── filelock [required: Any, installed: 3.17.0]
+│   │   ├── typing_extensions [required: >=4.10.0, installed: 4.15.0]
+│   │   ├── sympy [required: >=1.13.3, installed: 1.14.0]
+│   │   │   └── mpmath [required: >=1.1.0,<1.4, installed: 1.3.0]
+│   │   ├── networkx [required: Any, installed: 3.5]
+│   │   ├── Jinja2 [required: Any, installed: 3.1.6]
+│   │   │   └── MarkupSafe [required: >=2.0, installed: 3.0.2]
+│   │   └── fsspec [required: Any, installed: 2025.9.0]
+│   ├── numpy [required: >=1.17, installed: 2.3.4]
+│   └── packaging [required: >=20.9, installed: 25.0]
+├── triton-windows [required: Any, installed: 3.5.0.post21]
+├── sentencepiece [required: >=0.2.0, installed: 0.2.1]
+├── datasets [required: >=3.4.1,!=4.1.0,!=4.0.*, installed: 4.2.0]
+│   ├── filelock [required: Any, installed: 3.17.0]
+│   ├── numpy [required: >=1.17, installed: 2.3.4]
+│   ├── pyarrow [required: >=21.0.0, installed: 21.0.0]
+│   ├── dill [required: >=0.3.0,<0.4.1, installed: 0.4.0]
+│   ├── pandas [required: Any, installed: 2.3.3]
+│   │   ├── numpy [required: >=1.23.2, installed: 2.3.4]
+│   │   ├── python-dateutil [required: >=2.8.2, installed: 2.9.0.post0]
+│   │   │   └── six [required: >=1.5, installed: 1.17.0]
+│   │   ├── pytz [required: >=2020.1, installed: 2025.2]
+│   │   └── tzdata [required: >=2022.7, installed: 2025.2]
+│   ├── requests [required: >=2.32.2, installed: 2.32.5]
+│   │   ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+│   │   ├── idna [required: >=2.5,<4, installed: 3.7]
+│   │   ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+│   │   └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+│   ├── httpx [required: <1.0.0, installed: 0.28.1]
+│   │   ├── anyio [required: Any, installed: 4.11.0]
+│   │   │   ├── idna [required: >=2.8, installed: 3.7]
+│   │   │   ├── sniffio [required: >=1.1, installed: 1.3.1]
+│   │   │   └── typing_extensions [required: >=4.5, installed: 4.15.0]
+│   │   ├── certifi [required: Any, installed: 2025.10.5]
+│   │   ├── httpcore [required: ==1.*, installed: 1.0.9]
+│   │   │   ├── certifi [required: Any, installed: 2025.10.5]
+│   │   │   └── h11 [required: >=0.16, installed: 0.16.0]
+│   │   └── idna [required: Any, installed: 3.7]
+│   ├── tqdm [required: >=4.66.3, installed: 4.67.1]
+│   │   └── colorama [required: Any, installed: 0.4.6]
+│   ├── xxhash [required: Any, installed: 3.6.0]
+│   ├── multiprocess [required: <0.70.17, installed: 0.70.16]
+│   │   └── dill [required: >=0.3.8, installed: 0.4.0]
+│   ├── fsspec [required: >=2023.1.0,<=2025.9.0, installed: 2025.9.0]
+│   ├── huggingface-hub [required: >=0.25.0,<2.0, installed: 0.35.3]
+│   │   ├── filelock [required: Any, installed: 3.17.0]
+│   │   ├── fsspec [required: >=2023.5.0, installed: 2025.9.0]
+│   │   ├── packaging [required: >=20.9, installed: 25.0]
+│   │   ├── PyYAML [required: >=5.1, installed: 6.0.2]
+│   │   ├── requests [required: Any, installed: 2.32.5]
+│   │   │   ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+│   │   │   ├── idna [required: >=2.5,<4, installed: 3.7]
+│   │   │   ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+│   │   │   └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+│   │   ├── tqdm [required: >=4.42.1, installed: 4.67.1]
+│   │   │   └── colorama [required: Any, installed: 0.4.6]
+│   │   └── typing_extensions [required: >=3.7.4.3, installed: 4.15.0]
+│   ├── packaging [required: Any, installed: 25.0]
+│   └── PyYAML [required: >=5.1, installed: 6.0.2]
+├── accelerate [required: >=0.34.1, installed: 1.11.0]
+│   ├── numpy [required: >=1.17, installed: 2.3.4]
+│   ├── packaging [required: >=20.0, installed: 25.0]
+│   ├── psutil [required: Any, installed: 7.1.1]
+│   ├── PyYAML [required: Any, installed: 6.0.2]
+│   ├── torch [required: >=2.0.0, installed: 2.8.0+cu126]
+│   │   ├── filelock [required: Any, installed: 3.17.0]
+│   │   ├── typing_extensions [required: >=4.10.0, installed: 4.15.0]
+│   │   ├── sympy [required: >=1.13.3, installed: 1.14.0]
+│   │   │   └── mpmath [required: >=1.1.0,<1.4, installed: 1.3.0]
+│   │   ├── networkx [required: Any, installed: 3.5]
+│   │   ├── Jinja2 [required: Any, installed: 3.1.6]
+│   │   │   └── MarkupSafe [required: >=2.0, installed: 3.0.2]
+│   │   └── fsspec [required: Any, installed: 2025.9.0]
+│   ├── huggingface-hub [required: >=0.21.0, installed: 0.35.3]
+│   │   ├── filelock [required: Any, installed: 3.17.0]
+│   │   ├── fsspec [required: >=2023.5.0, installed: 2025.9.0]
+│   │   ├── packaging [required: >=20.9, installed: 25.0]
+│   │   ├── PyYAML [required: >=5.1, installed: 6.0.2]
+│   │   ├── requests [required: Any, installed: 2.32.5]
+│   │   │   ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+│   │   │   ├── idna [required: >=2.5,<4, installed: 3.7]
+│   │   │   ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+│   │   │   └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+│   │   ├── tqdm [required: >=4.42.1, installed: 4.67.1]
+│   │   │   └── colorama [required: Any, installed: 0.4.6]
+│   │   └── typing_extensions [required: >=3.7.4.3, installed: 4.15.0]
+│   └── safetensors [required: >=0.4.3, installed: 0.6.2]
+├── peft [required: >=0.7.1,!=0.11.0, installed: 0.17.1]
+│   ├── numpy [required: >=1.17, installed: 2.3.4]
+│   ├── packaging [required: >=20.0, installed: 25.0]
+│   ├── psutil [required: Any, installed: 7.1.1]
+│   ├── PyYAML [required: Any, installed: 6.0.2]
+│   ├── torch [required: >=1.13.0, installed: 2.8.0+cu126]
+│   │   ├── filelock [required: Any, installed: 3.17.0]
+│   │   ├── typing_extensions [required: >=4.10.0, installed: 4.15.0]
+│   │   ├── sympy [required: >=1.13.3, installed: 1.14.0]
+│   │   │   └── mpmath [required: >=1.1.0,<1.4, installed: 1.3.0]
+│   │   ├── networkx [required: Any, installed: 3.5]
+│   │   ├── Jinja2 [required: Any, installed: 3.1.6]
+│   │   │   └── MarkupSafe [required: >=2.0, installed: 3.0.2]
+│   │   └── fsspec [required: Any, installed: 2025.9.0]
+│   ├── transformers [required: Any, installed: 4.56.2]
+│   │   ├── filelock [required: Any, installed: 3.17.0]
+│   │   ├── huggingface-hub [required: >=0.34.0,<1.0, installed: 0.35.3]
+│   │   │   ├── filelock [required: Any, installed: 3.17.0]
+│   │   │   ├── fsspec [required: >=2023.5.0, installed: 2025.9.0]
+│   │   │   ├── packaging [required: >=20.9, installed: 25.0]
+│   │   │   ├── PyYAML [required: >=5.1, installed: 6.0.2]
+│   │   │   ├── requests [required: Any, installed: 2.32.5]
+│   │   │   │   ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+│   │   │   │   ├── idna [required: >=2.5,<4, installed: 3.7]
+│   │   │   │   ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+│   │   │   │   └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+│   │   │   ├── tqdm [required: >=4.42.1, installed: 4.67.1]
+│   │   │   │   └── colorama [required: Any, installed: 0.4.6]
+│   │   │   └── typing_extensions [required: >=3.7.4.3, installed: 4.15.0]
+│   │   ├── numpy [required: >=1.17, installed: 2.3.4]
+│   │   ├── packaging [required: >=20.0, installed: 25.0]
+│   │   ├── PyYAML [required: >=5.1, installed: 6.0.2]
+│   │   ├── regex [required: !=2019.12.17, installed: 2025.10.23]
+│   │   ├── requests [required: Any, installed: 2.32.5]
+│   │   │   ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+│   │   │   ├── idna [required: >=2.5,<4, installed: 3.7]
+│   │   │   ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+│   │   │   └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+│   │   ├── tokenizers [required: >=0.22.0,<=0.23.0, installed: 0.22.1]
+│   │   │   └── huggingface-hub [required: >=0.16.4,<2.0, installed: 0.35.3]
+│   │   │       ├── filelock [required: Any, installed: 3.17.0]
+│   │   │       ├── fsspec [required: >=2023.5.0, installed: 2025.9.0]
+│   │   │       ├── packaging [required: >=20.9, installed: 25.0]
+│   │   │       ├── PyYAML [required: >=5.1, installed: 6.0.2]
+│   │   │       ├── requests [required: Any, installed: 2.32.5]
+│   │   │       │   ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+│   │   │       │   ├── idna [required: >=2.5,<4, installed: 3.7]
+│   │   │       │   ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+│   │   │       │   └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+│   │   │       ├── tqdm [required: >=4.42.1, installed: 4.67.1]
+│   │   │       │   └── colorama [required: Any, installed: 0.4.6]
+│   │   │       └── typing_extensions [required: >=3.7.4.3, installed: 4.15.0]
+│   │   ├── safetensors [required: >=0.4.3, installed: 0.6.2]
+│   │   └── tqdm [required: >=4.27, installed: 4.67.1]
+│   │       └── colorama [required: Any, installed: 0.4.6]
+│   ├── tqdm [required: Any, installed: 4.67.1]
+│   │   └── colorama [required: Any, installed: 0.4.6]
+│   ├── accelerate [required: >=0.21.0, installed: 1.11.0]
+│   │   ├── numpy [required: >=1.17, installed: 2.3.4]
+│   │   ├── packaging [required: >=20.0, installed: 25.0]
+│   │   ├── psutil [required: Any, installed: 7.1.1]
+│   │   ├── PyYAML [required: Any, installed: 6.0.2]
+│   │   ├── torch [required: >=2.0.0, installed: 2.8.0+cu126]
+│   │   │   ├── filelock [required: Any, installed: 3.17.0]
+│   │   │   ├── typing_extensions [required: >=4.10.0, installed: 4.15.0]
+│   │   │   ├── sympy [required: >=1.13.3, installed: 1.14.0]
+│   │   │   │   └── mpmath [required: >=1.1.0,<1.4, installed: 1.3.0]
+│   │   │   ├── networkx [required: Any, installed: 3.5]
+│   │   │   ├── Jinja2 [required: Any, installed: 3.1.6]
+│   │   │   │   └── MarkupSafe [required: >=2.0, installed: 3.0.2]
+│   │   │   └── fsspec [required: Any, installed: 2025.9.0]
+│   │   ├── huggingface-hub [required: >=0.21.0, installed: 0.35.3]
+│   │   │   ├── filelock [required: Any, installed: 3.17.0]
+│   │   │   ├── fsspec [required: >=2023.5.0, installed: 2025.9.0]
+│   │   │   ├── packaging [required: >=20.9, installed: 25.0]
+│   │   │   ├── PyYAML [required: >=5.1, installed: 6.0.2]
+│   │   │   ├── requests [required: Any, installed: 2.32.5]
+│   │   │   │   ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+│   │   │   │   ├── idna [required: >=2.5,<4, installed: 3.7]
+│   │   │   │   ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+│   │   │   │   └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+│   │   │   ├── tqdm [required: >=4.42.1, installed: 4.67.1]
+│   │   │   │   └── colorama [required: Any, installed: 0.4.6]
+│   │   │   └── typing_extensions [required: >=3.7.4.3, installed: 4.15.0]
+│   │   └── safetensors [required: >=0.4.3, installed: 0.6.2]
+│   ├── safetensors [required: Any, installed: 0.6.2]
+│   └── huggingface-hub [required: >=0.25.0, installed: 0.35.3]
+│       ├── filelock [required: Any, installed: 3.17.0]
+│       ├── fsspec [required: >=2023.5.0, installed: 2025.9.0]
+│       ├── packaging [required: >=20.9, installed: 25.0]
+│       ├── PyYAML [required: >=5.1, installed: 6.0.2]
+│       ├── requests [required: Any, installed: 2.32.5]
+│       │   ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+│       │   ├── idna [required: >=2.5,<4, installed: 3.7]
+│       │   ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+│       │   └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+│       ├── tqdm [required: >=4.42.1, installed: 4.67.1]
+│       │   └── colorama [required: Any, installed: 0.4.6]
+│       └── typing_extensions [required: >=3.7.4.3, installed: 4.15.0]
+├── huggingface-hub [required: >=0.34.0, installed: 0.35.3]
+│   ├── filelock [required: Any, installed: 3.17.0]
+│   ├── fsspec [required: >=2023.5.0, installed: 2025.9.0]
+│   ├── packaging [required: >=20.9, installed: 25.0]
+│   ├── PyYAML [required: >=5.1, installed: 6.0.2]
+│   ├── requests [required: Any, installed: 2.32.5]
+│   │   ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+│   │   ├── idna [required: >=2.5,<4, installed: 3.7]
+│   │   ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+│   │   └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+│   ├── tqdm [required: >=4.42.1, installed: 4.67.1]
+│   │   └── colorama [required: Any, installed: 0.4.6]
+│   └── typing_extensions [required: >=3.7.4.3, installed: 4.15.0]
+├── hf_transfer [required: Any, installed: 0.1.9]
+├── diffusers [required: Any, installed: 0.35.2]
+│   ├── importlib_metadata [required: Any, installed: 8.7.0]
+│   │   └── zipp [required: >=3.20, installed: 3.23.0]
+│   ├── filelock [required: Any, installed: 3.17.0]
+│   ├── huggingface-hub [required: >=0.34.0, installed: 0.35.3]
+│   │   ├── filelock [required: Any, installed: 3.17.0]
+│   │   ├── fsspec [required: >=2023.5.0, installed: 2025.9.0]
+│   │   ├── packaging [required: >=20.9, installed: 25.0]
+│   │   ├── PyYAML [required: >=5.1, installed: 6.0.2]
+│   │   ├── requests [required: Any, installed: 2.32.5]
+│   │   │   ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+│   │   │   ├── idna [required: >=2.5,<4, installed: 3.7]
+│   │   │   ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+│   │   │   └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+│   │   ├── tqdm [required: >=4.42.1, installed: 4.67.1]
+│   │   │   └── colorama [required: Any, installed: 0.4.6]
+│   │   └── typing_extensions [required: >=3.7.4.3, installed: 4.15.0]
+│   ├── numpy [required: Any, installed: 2.3.4]
+│   ├── regex [required: !=2019.12.17, installed: 2025.10.23]
+│   ├── requests [required: Any, installed: 2.32.5]
+│   │   ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+│   │   ├── idna [required: >=2.5,<4, installed: 3.7]
+│   │   ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+│   │   └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+│   ├── safetensors [required: >=0.3.1, installed: 0.6.2]
+│   └── pillow [required: Any, installed: 11.1.0]
+├── transformers [required: >=4.51.3,<=4.56.2,!=4.55.1,!=4.55.0,!=4.54.0,!=4.53.0,!=4.52.3,!=4.52.2,!=4.52.1,!=4.52.0, installed: 4.56.2]
+│   ├── filelock [required: Any, installed: 3.17.0]
+│   ├── huggingface-hub [required: >=0.34.0,<1.0, installed: 0.35.3]
+│   │   ├── filelock [required: Any, installed: 3.17.0]
+│   │   ├── fsspec [required: >=2023.5.0, installed: 2025.9.0]
+│   │   ├── packaging [required: >=20.9, installed: 25.0]
+│   │   ├── PyYAML [required: >=5.1, installed: 6.0.2]
+│   │   ├── requests [required: Any, installed: 2.32.5]
+│   │   │   ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+│   │   │   ├── idna [required: >=2.5,<4, installed: 3.7]
+│   │   │   ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+│   │   │   └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+│   │   ├── tqdm [required: >=4.42.1, installed: 4.67.1]
+│   │   │   └── colorama [required: Any, installed: 0.4.6]
+│   │   └── typing_extensions [required: >=3.7.4.3, installed: 4.15.0]
+│   ├── numpy [required: >=1.17, installed: 2.3.4]
+│   ├── packaging [required: >=20.0, installed: 25.0]
+│   ├── PyYAML [required: >=5.1, installed: 6.0.2]
+│   ├── regex [required: !=2019.12.17, installed: 2025.10.23]
+│   ├── requests [required: Any, installed: 2.32.5]
+│   │   ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+│   │   ├── idna [required: >=2.5,<4, installed: 3.7]
+│   │   ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+│   │   └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+│   ├── tokenizers [required: >=0.22.0,<=0.23.0, installed: 0.22.1]
+│   │   └── huggingface-hub [required: >=0.16.4,<2.0, installed: 0.35.3]
+│   │       ├── filelock [required: Any, installed: 3.17.0]
+│   │       ├── fsspec [required: >=2023.5.0, installed: 2025.9.0]
+│   │       ├── packaging [required: >=20.9, installed: 25.0]
+│   │       ├── PyYAML [required: >=5.1, installed: 6.0.2]
+│   │       ├── requests [required: Any, installed: 2.32.5]
+│   │       │   ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+│   │       │   ├── idna [required: >=2.5,<4, installed: 3.7]
+│   │       │   ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+│   │       │   └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+│   │       ├── tqdm [required: >=4.42.1, installed: 4.67.1]
+│   │       │   └── colorama [required: Any, installed: 0.4.6]
+│   │       └── typing_extensions [required: >=3.7.4.3, installed: 4.15.0]
+│   ├── safetensors [required: >=0.4.3, installed: 0.6.2]
+│   └── tqdm [required: >=4.27, installed: 4.67.1]
+│       └── colorama [required: Any, installed: 0.4.6]
+└── trl [required: >=0.7.9,<=0.23.0,!=0.9.3,!=0.9.2,!=0.9.1,!=0.9.0,!=0.19.0,!=0.15.0, installed: 0.23.0]
+    ├── accelerate [required: >=1.4.0, installed: 1.11.0]
+    │   ├── numpy [required: >=1.17, installed: 2.3.4]
+    │   ├── packaging [required: >=20.0, installed: 25.0]
+    │   ├── psutil [required: Any, installed: 7.1.1]
+    │   ├── PyYAML [required: Any, installed: 6.0.2]
+    │   ├── torch [required: >=2.0.0, installed: 2.8.0+cu126]
+    │   │   ├── filelock [required: Any, installed: 3.17.0]
+    │   │   ├── typing_extensions [required: >=4.10.0, installed: 4.15.0]
+    │   │   ├── sympy [required: >=1.13.3, installed: 1.14.0]
+    │   │   │   └── mpmath [required: >=1.1.0,<1.4, installed: 1.3.0]
+    │   │   ├── networkx [required: Any, installed: 3.5]
+    │   │   ├── Jinja2 [required: Any, installed: 3.1.6]
+    │   │   │   └── MarkupSafe [required: >=2.0, installed: 3.0.2]
+    │   │   └── fsspec [required: Any, installed: 2025.9.0]
+    │   ├── huggingface-hub [required: >=0.21.0, installed: 0.35.3]
+    │   │   ├── filelock [required: Any, installed: 3.17.0]
+    │   │   ├── fsspec [required: >=2023.5.0, installed: 2025.9.0]
+    │   │   ├── packaging [required: >=20.9, installed: 25.0]
+    │   │   ├── PyYAML [required: >=5.1, installed: 6.0.2]
+    │   │   ├── requests [required: Any, installed: 2.32.5]
+    │   │   │   ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+    │   │   │   ├── idna [required: >=2.5,<4, installed: 3.7]
+    │   │   │   ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+    │   │   │   └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+    │   │   ├── tqdm [required: >=4.42.1, installed: 4.67.1]
+    │   │   │   └── colorama [required: Any, installed: 0.4.6]
+    │   │   └── typing_extensions [required: >=3.7.4.3, installed: 4.15.0]
+    │   └── safetensors [required: >=0.4.3, installed: 0.6.2]
+    ├── datasets [required: >=3.0.0, installed: 4.2.0]
+    │   ├── filelock [required: Any, installed: 3.17.0]
+    │   ├── numpy [required: >=1.17, installed: 2.3.4]
+    │   ├── pyarrow [required: >=21.0.0, installed: 21.0.0]
+    │   ├── dill [required: >=0.3.0,<0.4.1, installed: 0.4.0]
+    │   ├── pandas [required: Any, installed: 2.3.3]
+    │   │   ├── numpy [required: >=1.23.2, installed: 2.3.4]
+    │   │   ├── python-dateutil [required: >=2.8.2, installed: 2.9.0.post0]
+    │   │   │   └── six [required: >=1.5, installed: 1.17.0]
+    │   │   ├── pytz [required: >=2020.1, installed: 2025.2]
+    │   │   └── tzdata [required: >=2022.7, installed: 2025.2]
+    │   ├── requests [required: >=2.32.2, installed: 2.32.5]
+    │   │   ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+    │   │   ├── idna [required: >=2.5,<4, installed: 3.7]
+    │   │   ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+    │   │   └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+    │   ├── httpx [required: <1.0.0, installed: 0.28.1]
+    │   │   ├── anyio [required: Any, installed: 4.11.0]
+    │   │   │   ├── idna [required: >=2.8, installed: 3.7]
+    │   │   │   ├── sniffio [required: >=1.1, installed: 1.3.1]
+    │   │   │   └── typing_extensions [required: >=4.5, installed: 4.15.0]
+    │   │   ├── certifi [required: Any, installed: 2025.10.5]
+    │   │   ├── httpcore [required: ==1.*, installed: 1.0.9]
+    │   │   │   ├── certifi [required: Any, installed: 2025.10.5]
+    │   │   │   └── h11 [required: >=0.16, installed: 0.16.0]
+    │   │   └── idna [required: Any, installed: 3.7]
+    │   ├── tqdm [required: >=4.66.3, installed: 4.67.1]
+    │   │   └── colorama [required: Any, installed: 0.4.6]
+    │   ├── xxhash [required: Any, installed: 3.6.0]
+    │   ├── multiprocess [required: <0.70.17, installed: 0.70.16]
+    │   │   └── dill [required: >=0.3.8, installed: 0.4.0]
+    │   ├── fsspec [required: >=2023.1.0,<=2025.9.0, installed: 2025.9.0]
+    │   ├── huggingface-hub [required: >=0.25.0,<2.0, installed: 0.35.3]
+    │   │   ├── filelock [required: Any, installed: 3.17.0]
+    │   │   ├── fsspec [required: >=2023.5.0, installed: 2025.9.0]
+    │   │   ├── packaging [required: >=20.9, installed: 25.0]
+    │   │   ├── PyYAML [required: >=5.1, installed: 6.0.2]
+    │   │   ├── requests [required: Any, installed: 2.32.5]
+    │   │   │   ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+    │   │   │   ├── idna [required: >=2.5,<4, installed: 3.7]
+    │   │   │   ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+    │   │   │   └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+    │   │   ├── tqdm [required: >=4.42.1, installed: 4.67.1]
+    │   │   │   └── colorama [required: Any, installed: 0.4.6]
+    │   │   └── typing_extensions [required: >=3.7.4.3, installed: 4.15.0]
+    │   ├── packaging [required: Any, installed: 25.0]
+    │   └── PyYAML [required: >=5.1, installed: 6.0.2]
+    └── transformers [required: >=4.56.1, installed: 4.56.2]
+        ├── filelock [required: Any, installed: 3.17.0]
+        ├── huggingface-hub [required: >=0.34.0,<1.0, installed: 0.35.3]
+        │   ├── filelock [required: Any, installed: 3.17.0]
+        │   ├── fsspec [required: >=2023.5.0, installed: 2025.9.0]
+        │   ├── packaging [required: >=20.9, installed: 25.0]
+        │   ├── PyYAML [required: >=5.1, installed: 6.0.2]
+        │   ├── requests [required: Any, installed: 2.32.5]
+        │   │   ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+        │   │   ├── idna [required: >=2.5,<4, installed: 3.7]
+        │   │   ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+        │   │   └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+        │   ├── tqdm [required: >=4.42.1, installed: 4.67.1]
+        │   │   └── colorama [required: Any, installed: 0.4.6]
+        │   └── typing_extensions [required: >=3.7.4.3, installed: 4.15.0]
+        ├── numpy [required: >=1.17, installed: 2.3.4]
+        ├── packaging [required: >=20.0, installed: 25.0]
+        ├── PyYAML [required: >=5.1, installed: 6.0.2]
+        ├── regex [required: !=2019.12.17, installed: 2025.10.23]
+        ├── requests [required: Any, installed: 2.32.5]
+        │   ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+        │   ├── idna [required: >=2.5,<4, installed: 3.7]
+        │   ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+        │   └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+        ├── tokenizers [required: >=0.22.0,<=0.23.0, installed: 0.22.1]
+        │   └── huggingface-hub [required: >=0.16.4,<2.0, installed: 0.35.3]
+        │       ├── filelock [required: Any, installed: 3.17.0]
+        │       ├── fsspec [required: >=2023.5.0, installed: 2025.9.0]
+        │       ├── packaging [required: >=20.9, installed: 25.0]
+        │       ├── PyYAML [required: >=5.1, installed: 6.0.2]
+        │       ├── requests [required: Any, installed: 2.32.5]
+        │       │   ├── charset-normalizer [required: >=2,<4, installed: 3.3.2]
+        │       │   ├── idna [required: >=2.5,<4, installed: 3.7]
+        │       │   ├── urllib3 [required: >=1.21.1,<3, installed: 2.5.0]
+        │       │   └── certifi [required: >=2017.4.17, installed: 2025.10.5]
+        │       ├── tqdm [required: >=4.42.1, installed: 4.67.1]
+        │       │   └── colorama [required: Any, installed: 0.4.6]
+        │       └── typing_extensions [required: >=3.7.4.3, installed: 4.15.0]
+        ├── safetensors [required: >=0.4.3, installed: 0.6.2]
+        └── tqdm [required: >=4.27, installed: 4.67.1]
+            └── colorama [required: Any, installed: 0.4.6]
+win-inet-pton==1.1.0
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> pipdeptree --warn conflict
+usage: pipdeptree [-h] [-v] [-w {silence,suppress,fail}] [--python PYTHON] [--path PATH] [-p P] [-e P] [--exclude-dependencies] [-l | -u] [-f] [--encoding E] [-a] [-d D] [-r] [--license] [-j | --json-tree | --mermaid | --graph-output FMT]
+pipdeptree: error: argument -w/--warn: invalid choice: 'conflict' (choose from 'silence', 'suppress', 'fail')
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> conda list > conda_packages.txt
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> pipdeptree > pipdeptree_libraries.txt
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> git add .
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> git commit -m "Upload resolved library conflicts in current env (medd)"
+[main 52e1de6] Upload resolved library conflicts in current env (medd)
+ 4 files changed, 2 insertions(+), 1 deletion(-)
+ create mode 100644 conda_packages.txt
+ create mode 100644 installed_packages.txt
+ create mode 100644 pipdeptree_libraries.txt
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> git push origin main
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 20 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 13.28 KiB | 2.21 MiB/s, done.
+Total 6 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (3/3), completed with 2 local objects.
+To https://github.com/CodingYodha/MedScribe_Test.git
+   9bdc85d..52e1de6  main -> main
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> python .\gemma_finetuning_unsloth.py
+🦥 Unsloth: Will patch your computer to enable 2x faster free finetuning.
+W1023 02:41:26.577000 34124 site-packages\torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+🦥 Unsloth Zoo will now patch everything to make training faster!
+Traceback (most recent call last):
+  File "E:\Projects\Med_Scribe\Medscribe_testing\gemma_finetuning_unsloth.py", line 6, in <module>
+    from transformers import TrainingArguements
+ImportError: cannot import name 'TrainingArguements' from 'transformers' (C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\transformers\__init__.py)
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> git add .
+warning: in the working copy of 'unsloth_compiled_cache/UnslothAlignPropTrainer.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'unsloth_compiled_cache/UnslothBCOTrainer.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'unsloth_compiled_cache/UnslothCPOTrainer.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'unsloth_compiled_cache/UnslothDDPOTrainer.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'unsloth_compiled_cache/UnslothDPOTrainer.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'unsloth_compiled_cache/UnslothGKDTrainer.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'unsloth_compiled_cache/UnslothGRPOTrainer.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'unsloth_compiled_cache/UnslothIterativeSFTTrainer.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'unsloth_compiled_cache/UnslothKTOTrainer.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'unsloth_compiled_cache/UnslothNashMDTrainer.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'unsloth_compiled_cache/UnslothORPOTrainer.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'unsloth_compiled_cache/UnslothOnlineDPOTrainer.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'unsloth_compiled_cache/UnslothPPOTrainer.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'unsloth_compiled_cache/UnslothPRMTrainer.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'unsloth_compiled_cache/UnslothRLOOTrainer.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'unsloth_compiled_cache/UnslothRewardTrainer.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'unsloth_compiled_cache/UnslothSFTTrainer.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'unsloth_compiled_cache/UnslothXPOTrainer.py', LF will be replaced by CRLF the next time Git touches it
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   gemma_finetuning_unsloth.py
+        new file:   unsloth_compiled_cache/UnslothAlignPropTrainer.py
+        new file:   unsloth_compiled_cache/UnslothBCOTrainer.py
+        new file:   unsloth_compiled_cache/UnslothCPOTrainer.py
+        new file:   unsloth_compiled_cache/UnslothDDPOTrainer.py
+        new file:   unsloth_compiled_cache/UnslothDPOTrainer.py
+        new file:   unsloth_compiled_cache/UnslothGKDTrainer.py
+        new file:   unsloth_compiled_cache/UnslothGRPOTrainer.py
+        new file:   unsloth_compiled_cache/UnslothIterativeSFTTrainer.py
+        new file:   unsloth_compiled_cache/UnslothKTOTrainer.py
+        new file:   unsloth_compiled_cache/UnslothNashMDTrainer.py
+        new file:   unsloth_compiled_cache/UnslothORPOTrainer.py
+        new file:   unsloth_compiled_cache/UnslothOnlineDPOTrainer.py
+        new file:   unsloth_compiled_cache/UnslothPPOTrainer.py
+        new file:   unsloth_compiled_cache/UnslothPRMTrainer.py
+        new file:   unsloth_compiled_cache/UnslothRLOOTrainer.py
+        new file:   unsloth_compiled_cache/UnslothRewardTrainer.py
+        new file:   unsloth_compiled_cache/UnslothSFTTrainer.py
+        new file:   unsloth_compiled_cache/UnslothXPOTrainer.py
+        new file:   unsloth_compiled_cache/__pycache__/UnslothAlignPropTrainer.cpython-311.pyc
+        new file:   unsloth_compiled_cache/__pycache__/UnslothBCOTrainer.cpython-311.pyc
+        new file:   unsloth_compiled_cache/__pycache__/UnslothCPOTrainer.cpython-311.pyc
+        new file:   unsloth_compiled_cache/__pycache__/UnslothDDPOTrainer.cpython-311.pyc
+        new file:   unsloth_compiled_cache/__pycache__/UnslothDPOTrainer.cpython-311.pyc
+        new file:   unsloth_compiled_cache/__pycache__/UnslothGKDTrainer.cpython-311.pyc
+        new file:   unsloth_compiled_cache/__pycache__/UnslothGRPOTrainer.cpython-311.pyc
+        new file:   unsloth_compiled_cache/__pycache__/UnslothIterativeSFTTrainer.cpython-311.pyc
+        new file:   unsloth_compiled_cache/__pycache__/UnslothKTOTrainer.cpython-311.pyc
+        new file:   unsloth_compiled_cache/__pycache__/UnslothNashMDTrainer.cpython-311.pyc
+        new file:   unsloth_compiled_cache/__pycache__/UnslothORPOTrainer.cpython-311.pyc
+        new file:   unsloth_compiled_cache/__pycache__/UnslothOnlineDPOTrainer.cpython-311.pyc
+        new file:   unsloth_compiled_cache/__pycache__/UnslothPPOTrainer.cpython-311.pyc
+        new file:   unsloth_compiled_cache/__pycache__/UnslothPRMTrainer.cpython-311.pyc
+        new file:   unsloth_compiled_cache/__pycache__/UnslothRLOOTrainer.cpython-311.pyc
+        new file:   unsloth_compiled_cache/__pycache__/UnslothRewardTrainer.cpython-311.pyc
+        new file:   unsloth_compiled_cache/__pycache__/UnslothSFTTrainer.cpython-311.pyc
+        new file:   unsloth_compiled_cache/__pycache__/UnslothXPOTrainer.cpython-311.pyc
+
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> git restore
+fatal: you must specify path(s) to restore
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> git restore .
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   gemma_finetuning_unsloth.py
+        new file:   unsloth_compiled_cache/UnslothAlignPropTrainer.py
+        new file:   unsloth_compiled_cache/UnslothBCOTrainer.py
+        new file:   unsloth_compiled_cache/UnslothCPOTrainer.py
+        new file:   unsloth_compiled_cache/UnslothDDPOTrainer.py
+        new file:   unsloth_compiled_cache/UnslothDPOTrainer.py
+        new file:   unsloth_compiled_cache/UnslothGKDTrainer.py
+        new file:   unsloth_compiled_cache/UnslothGRPOTrainer.py
+        new file:   unsloth_compiled_cache/UnslothIterativeSFTTrainer.py
+        new file:   unsloth_compiled_cache/UnslothKTOTrainer.py
+        new file:   unsloth_compiled_cache/UnslothNashMDTrainer.py
+        new file:   unsloth_compiled_cache/UnslothORPOTrainer.py
+        new file:   unsloth_compiled_cache/UnslothOnlineDPOTrainer.py
+        new file:   unsloth_compiled_cache/UnslothPPOTrainer.py
+        new file:   unsloth_compiled_cache/UnslothPRMTrainer.py
+        new file:   unsloth_compiled_cache/UnslothRLOOTrainer.py
+        new file:   unsloth_compiled_cache/UnslothRewardTrainer.py
+        new file:   unsloth_compiled_cache/UnslothSFTTrainer.py
+        new file:   unsloth_compiled_cache/UnslothXPOTrainer.py
+        new file:   unsloth_compiled_cache/__pycache__/UnslothAlignPropTrainer.cpython-311.pyc
+        new file:   unsloth_compiled_cache/__pycache__/UnslothBCOTrainer.cpython-311.pyc
+        new file:   unsloth_compiled_cache/__pycache__/UnslothCPOTrainer.cpython-311.pyc
+        new file:   unsloth_compiled_cache/__pycache__/UnslothDDPOTrainer.cpython-311.pyc
+        new file:   unsloth_compiled_cache/__pycache__/UnslothDPOTrainer.cpython-311.pyc
+        new file:   unsloth_compiled_cache/__pycache__/UnslothGKDTrainer.cpython-311.pyc
+        new file:   unsloth_compiled_cache/__pycache__/UnslothGRPOTrainer.cpython-311.pyc
+        new file:   unsloth_compiled_cache/__pycache__/UnslothIterativeSFTTrainer.cpython-311.pyc
+        new file:   unsloth_compiled_cache/__pycache__/UnslothKTOTrainer.cpython-311.pyc
+        new file:   unsloth_compiled_cache/__pycache__/UnslothNashMDTrainer.cpython-311.pyc
+        new file:   unsloth_compiled_cache/__pycache__/UnslothORPOTrainer.cpython-311.pyc
+        new file:   unsloth_compiled_cache/__pycache__/UnslothOnlineDPOTrainer.cpython-311.pyc
+        new file:   unsloth_compiled_cache/__pycache__/UnslothPPOTrainer.cpython-311.pyc
+        new file:   unsloth_compiled_cache/__pycache__/UnslothPRMTrainer.cpython-311.pyc
+        new file:   unsloth_compiled_cache/__pycache__/UnslothRLOOTrainer.cpython-311.pyc
+        new file:   unsloth_compiled_cache/__pycache__/UnslothRewardTrainer.cpython-311.pyc
+        new file:   unsloth_compiled_cache/__pycache__/UnslothSFTTrainer.cpython-311.pyc
+        new file:   unsloth_compiled_cache/__pycache__/UnslothXPOTrainer.cpython-311.pyc
+
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> git restore --staged .
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   gemma_finetuning_unsloth.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        unsloth_compiled_cache/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> git add .\gemma_finetuning_unsloth.py
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> git commit -m "fix: correct typo in TrainingArguments import"
+[main eda2cff] fix: correct typo in TrainingArguments import
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 20 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 326 bytes | 163.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/CodingYodha/MedScribe_Test.git
+   52e1de6..eda2cff  main -> main
+(medd) PS E:\Projects\Med_Scribe\Medscribe_testing> python .\gemma_finetuning_unsloth.py
+🦥 Unsloth: Will patch your computer to enable 2x faster free finetuning.
+W1023 02:46:10.009000 47260 site-packages\torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+🦥 Unsloth Zoo will now patch everything to make training faster!
+Loading Model....
+==((====))==  Unsloth 2025.10.7: Fast Gemma3 patching. Transformers: 4.56.2.
+   \\   /|    NVIDIA GeForce RTX 3050 6GB Laptop GPU. Num GPUs = 1. Max memory: 6.0 GB. Platform: Windows.
+O^O/ \_/ \    Torch: 2.8.0+cu126. CUDA: 8.6. CUDA Toolkit: 12.6. Triton: 3.5.0
+\        /    Bfloat16 = TRUE. FA [Xformers = 0.0.32.post2. FA2 = False]
+ "-____-"     Free license: http://github.com/unslothai/unsloth
+Unsloth: Fast downloading is enabled - ignore downloading bars which are red colored!
+Traceback (most recent call last):
+  File "E:\Projects\Med_Scribe\Medscribe_testing\gemma_finetuning_unsloth.py", line 42, in <module>
+    model , tokenizer = FastLanguageModel.from_pretrained(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\unsloth\models\loader.py", line 431, in from_pretrained
+    return FastModel.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\unsloth\models\loader.py", line 988, in from_pretrained
+    model, tokenizer = FastBaseModel.from_pretrained(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\unsloth\models\vision.py", line 420, in from_pretrained
+    get_statistics(kwargs.get("local_files_only", False))
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\unsloth\models\_utils.py", line 1016, in get_statistics
+    _get_statistics(None)
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\unsloth\models\_utils.py", line 983, in _get_statistics
+    stats_check()
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\unsloth_zoo\rl_environments.py", line 398, in wrapper
+    with time_limit(seconds):
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Shiva\miniconda3\envs\medd\Lib\site-packages\unsloth_zoo\rl_environments.py", line 327, in time_limit
+    raise NotImplementedError("time_limit requires Unix setitimer/SIGALRM support")
+NotImplementedError: time_limit requires Unix setitimer/SIGALRM support

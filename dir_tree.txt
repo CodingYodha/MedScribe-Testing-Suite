@@ -1,0 +1,318 @@
+.
+├── audio
+│   ├── Mr_Patil_Medical_converstaino.m4a
+│   ├── audio.wav
+│   └── output_audio.wav
+├── can_be_ignored
+│   ├── gemma1b.json
+│   ├── important codes.txt
+│   ├── prescription_output.json
+│   ├── rough_savings.py
+│   └── small_code_tester.py
+├── datasets
+│   ├── Synthetic_4_llms_csv
+│   │   ├── prescription_finetuning_dataset_fixed.csv
+│   │   ├── processed
+│   │   │   ├── tokenized_dataset
+│   │   │   │   ├── test
+│   │   │   │   │   ├── data-00000-of-00001.arrow
+│   │   │   │   │   ├── dataset_info.json
+│   │   │   │   │   └── state.json
+│   │   │   │   └── train
+│   │   │   │       ├── data-00000-of-00001.arrow
+│   │   │   │       ├── dataset_info.json
+│   │   │   │       └── state.json
+│   │   │   └── tokenized_dataset_with_instructions
+│   │   │       ├── test
+│   │   │       │   ├── data-00000-of-00001.arrow
+│   │   │       │   ├── dataset_info.json
+│   │   │       │   └── state.json
+│   │   │       └── train
+│   │   │           ├── data-00000-of-00001.arrow
+│   │   │           ├── dataset_info.json
+│   │   │           └── state.json
+│   │   └── raw
+│   │       └── prescription_finetuning_dataset.csv
+│   └── Synthetic_Claude_Sonnet_4-5_jsonl
+│       ├── processed
+│       │   └── tokenized_dataset_claude_with_instructions
+│       │       ├── train
+│       │       │   ├── data-00000-of-00001.arrow
+│       │       │   ├── dataset_info.json
+│       │       │   └── state.json
+│       │       └── val
+│       │           ├── data-00000-of-00001.arrow
+│       │           ├── dataset_info.json
+│       │           └── state.json
+│       └── raw
+│           └── clean_prescription_dataset.jsonl
+├── env
+│   ├── conda_packages.txt
+│   ├── env_fixed.yml
+│   ├── environment.yml
+│   ├── environment_linux.yml
+│   ├── installed_packages_powershell_windows.txt
+│   └── pipdeptree_libraries_windows_powershell.txt
+├── logs
+│   ├── terminal_log_WSL_Linux.txt
+│   ├── terminal_log_history_powershell.txt
+│   └── terminal_log_live_powershell.txt
+├── models
+│   ├── finetuned
+│   │   ├── gemma-prescription-finetuned
+│   │   │   ├── README.md
+│   │   │   ├── adapter_config.json
+│   │   │   ├── adapter_model.safetensors
+│   │   │   ├── added_tokens.json
+│   │   │   ├── chat_template.jinja
+│   │   │   ├── checkpoint-100
+│   │   │   │   ├── README.md
+│   │   │   │   ├── adapter_config.json
+│   │   │   │   ├── adapter_model.safetensors
+│   │   │   │   ├── added_tokens.json
+│   │   │   │   ├── chat_template.jinja
+│   │   │   │   ├── optimizer.pt
+│   │   │   │   ├── rng_state.pth
+│   │   │   │   ├── scheduler.pt
+│   │   │   │   ├── special_tokens_map.json
+│   │   │   │   ├── tokenizer.json
+│   │   │   │   ├── tokenizer.model
+│   │   │   │   ├── tokenizer_config.json
+│   │   │   │   ├── trainer_state.json
+│   │   │   │   └── training_args.bin
+│   │   │   ├── checkpoint-111
+│   │   │   │   ├── README.md
+│   │   │   │   ├── adapter_config.json
+│   │   │   │   ├── adapter_model.safetensors
+│   │   │   │   ├── added_tokens.json
+│   │   │   │   ├── chat_template.jinja
+│   │   │   │   ├── optimizer.pt
+│   │   │   │   ├── rng_state.pth
+│   │   │   │   ├── scheduler.pt
+│   │   │   │   ├── special_tokens_map.json
+│   │   │   │   ├── tokenizer.json
+│   │   │   │   ├── tokenizer.model
+│   │   │   │   ├── tokenizer_config.json
+│   │   │   │   ├── trainer_state.json
+│   │   │   │   └── training_args.bin
+│   │   │   ├── checkpoint-50
+│   │   │   │   ├── README.md
+│   │   │   │   ├── adapter_config.json
+│   │   │   │   ├── adapter_model.safetensors
+│   │   │   │   ├── added_tokens.json
+│   │   │   │   ├── chat_template.jinja
+│   │   │   │   ├── optimizer.pt
+│   │   │   │   ├── rng_state.pth
+│   │   │   │   ├── scheduler.pt
+│   │   │   │   ├── special_tokens_map.json
+│   │   │   │   ├── tokenizer.json
+│   │   │   │   ├── tokenizer.model
+│   │   │   │   ├── tokenizer_config.json
+│   │   │   │   ├── trainer_state.json
+│   │   │   │   └── training_args.bin
+│   │   │   ├── special_tokens_map.json
+│   │   │   ├── tokenizer.json
+│   │   │   ├── tokenizer.model
+│   │   │   └── tokenizer_config.json
+│   │   ├── gemma-prescription-finetuned-it
+│   │   │   ├── README.md
+│   │   │   ├── adapter_config.json
+│   │   │   ├── adapter_model.safetensors
+│   │   │   ├── added_tokens.json
+│   │   │   ├── chat_template.jinja
+│   │   │   ├── checkpoint-100
+│   │   │   │   ├── README.md
+│   │   │   │   ├── adapter_config.json
+│   │   │   │   ├── adapter_model.safetensors
+│   │   │   │   ├── added_tokens.json
+│   │   │   │   ├── chat_template.jinja
+│   │   │   │   ├── optimizer.pt
+│   │   │   │   ├── rng_state.pth
+│   │   │   │   ├── scheduler.pt
+│   │   │   │   ├── special_tokens_map.json
+│   │   │   │   ├── tokenizer.json
+│   │   │   │   ├── tokenizer.model
+│   │   │   │   ├── tokenizer_config.json
+│   │   │   │   ├── trainer_state.json
+│   │   │   │   └── training_args.bin
+│   │   │   ├── checkpoint-126
+│   │   │   │   ├── README.md
+│   │   │   │   ├── adapter_config.json
+│   │   │   │   ├── adapter_model.safetensors
+│   │   │   │   ├── added_tokens.json
+│   │   │   │   ├── chat_template.jinja
+│   │   │   │   ├── optimizer.pt
+│   │   │   │   ├── rng_state.pth
+│   │   │   │   ├── scheduler.pt
+│   │   │   │   ├── special_tokens_map.json
+│   │   │   │   ├── tokenizer.json
+│   │   │   │   ├── tokenizer.model
+│   │   │   │   ├── tokenizer_config.json
+│   │   │   │   ├── trainer_state.json
+│   │   │   │   └── training_args.bin
+│   │   │   ├── checkpoint-50
+│   │   │   │   ├── README.md
+│   │   │   │   ├── adapter_config.json
+│   │   │   │   ├── adapter_model.safetensors
+│   │   │   │   ├── added_tokens.json
+│   │   │   │   ├── chat_template.jinja
+│   │   │   │   ├── optimizer.pt
+│   │   │   │   ├── rng_state.pth
+│   │   │   │   ├── scheduler.pt
+│   │   │   │   ├── special_tokens_map.json
+│   │   │   │   ├── tokenizer.json
+│   │   │   │   ├── tokenizer.model
+│   │   │   │   ├── tokenizer_config.json
+│   │   │   │   ├── trainer_state.json
+│   │   │   │   └── training_args.bin
+│   │   │   ├── special_tokens_map.json
+│   │   │   ├── tokenizer.json
+│   │   │   ├── tokenizer.model
+│   │   │   └── tokenizer_config.json
+│   │   └── gemma-prescription-finetuned-it-merged_final
+│   │       ├── added_tokens.json
+│   │       ├── chat_template.jinja
+│   │       ├── config.json
+│   │       ├── generation_config.json
+│   │       ├── model.safetensors
+│   │       ├── special_tokens_map.json
+│   │       ├── tokenizer.json
+│   │       ├── tokenizer.model
+│   │       └── tokenizer_config.json
+│   ├── gemma-3-1b-it
+│   │   ├── README.md
+│   │   ├── added_tokens.json
+│   │   ├── config.json
+│   │   ├── generation_config.json
+│   │   ├── model.safetensors
+│   │   ├── special_tokens_map.json
+│   │   ├── tokenizer.json
+│   │   ├── tokenizer.model
+│   │   └── tokenizer_config.json
+│   ├── large-v3
+│   │   ├── README.md
+│   │   ├── config.json
+│   │   ├── model.bin
+│   │   ├── preprocessor_config.json
+│   │   ├── tokenizer.json
+│   │   └── vocabulary.json
+│   ├── pretrained_models_diarization
+│   │   └── spkrec-ecapa-voxceleb
+│   │       ├── README.md
+│   │       ├── classifier.ckpt
+│   │       ├── config.json
+│   │       ├── embedding_model.ckpt
+│   │       ├── example1.wav
+│   │       ├── example2.flac
+│   │       ├── hyperparams.yaml
+│   │       ├── label_encoder.txt
+│   │       └── mean_var_norm_emb.ckpt
+│   └── whisper
+│       └── models--Systran--faster-whisper-large-v3
+│           ├── blobs
+│           │   ├── 0adcd01e7c237205d593b707e66dd5d7bc785d2d.incomplete
+│           │   ├── 3a5e2ba63acdcac9a19ba56cf9bd27f185bfff61.incomplete
+│           │   ├── 69f74147e3334731bc3a76048724833325d2ec74642fb52620eda87352e3d4f1.incomplete
+│           │   ├── 75336feae814999bae6ccccdecf177639ffc6f9d.incomplete
+│           │   └── 931c77a740890c46365c7ae0c9d350ba3cca908f.incomplete
+│           ├── refs
+│           │   └── main
+│           └── snapshots
+│               └── edaa852ec7e145841d8ffdb056a99866b5f0a478
+├── notebooks
+│   ├── local_model_loading.ipynb
+│   ├── new_test.ipynb
+│   ├── quantization.ipynb
+│   └── self_code.ipynb
+├── requirements.txt
+├── scripts
+│   ├── claude_dataset_factory.py
+│   ├── data_generation.py
+│   ├── dataset_cleaner.py
+│   ├── diarize_and_label.py
+│   ├── gemma_finetuning_unsloth.py
+│   ├── json_dataset_validator.py
+│   ├── merge_lora.py
+│   └── tokenize_prescription_dataset.py
+└── unsloth_compiled_cache
+    ├── AqlmLoraLinear_peft_forward.py
+    ├── AwqLoraLinear_peft_forward.py
+    ├── BatchNorm1d.py
+    ├── BatchNorm2d.py
+    ├── BatchNorm3d.py
+    ├── Conv1d.py
+    ├── Conv2d.py
+    ├── Conv3d.py
+    ├── ConvTranspose1d.py
+    ├── ConvTranspose2d.py
+    ├── ConvTranspose3d.py
+    ├── GPTQLoraLinear_peft_forward.py
+    ├── GroupNorm.py
+    ├── LayerNorm.py
+    ├── Linear4bit_peft_forward.py
+    ├── Linear8bitLt_peft_forward.py
+    ├── Linear_peft_forward.py
+    ├── LoraParallelLinear_peft_forward.py
+    ├── RMSNorm.py
+    ├── UnslothAlignPropTrainer.py
+    ├── UnslothBCOTrainer.py
+    ├── UnslothCPOTrainer.py
+    ├── UnslothDDPOTrainer.py
+    ├── UnslothDPOTrainer.py
+    ├── UnslothGKDTrainer.py
+    ├── UnslothGRPOTrainer.py
+    ├── UnslothIterativeSFTTrainer.py
+    ├── UnslothKTOTrainer.py
+    ├── UnslothNashMDTrainer.py
+    ├── UnslothORPOTrainer.py
+    ├── UnslothOnlineDPOTrainer.py
+    ├── UnslothPPOTrainer.py
+    ├── UnslothPRMTrainer.py
+    ├── UnslothRLOOTrainer.py
+    ├── UnslothRewardTrainer.py
+    ├── UnslothSFTTrainer.py
+    ├── UnslothXPOTrainer.py
+    ├── __pycache__
+    │   ├── AqlmLoraLinear_peft_forward.cpython-311.pyc
+    │   ├── AwqLoraLinear_peft_forward.cpython-311.pyc
+    │   ├── BatchNorm1d.cpython-311.pyc
+    │   ├── BatchNorm2d.cpython-311.pyc
+    │   ├── BatchNorm3d.cpython-311.pyc
+    │   ├── Conv1d.cpython-311.pyc
+    │   ├── Conv2d.cpython-311.pyc
+    │   ├── Conv3d.cpython-311.pyc
+    │   ├── ConvTranspose1d.cpython-311.pyc
+    │   ├── ConvTranspose2d.cpython-311.pyc
+    │   ├── ConvTranspose3d.cpython-311.pyc
+    │   ├── GPTQLoraLinear_peft_forward.cpython-311.pyc
+    │   ├── GroupNorm.cpython-311.pyc
+    │   ├── LayerNorm.cpython-311.pyc
+    │   ├── Linear4bit_peft_forward.cpython-311.pyc
+    │   ├── Linear8bitLt_peft_forward.cpython-311.pyc
+    │   ├── Linear_peft_forward.cpython-311.pyc
+    │   ├── LoraParallelLinear_peft_forward.cpython-311.pyc
+    │   ├── RMSNorm.cpython-311.pyc
+    │   ├── UnslothAlignPropTrainer.cpython-311.pyc
+    │   ├── UnslothBCOTrainer.cpython-311.pyc
+    │   ├── UnslothCPOTrainer.cpython-311.pyc
+    │   ├── UnslothDDPOTrainer.cpython-311.pyc
+    │   ├── UnslothDPOTrainer.cpython-311.pyc
+    │   ├── UnslothGKDTrainer.cpython-311.pyc
+    │   ├── UnslothGRPOTrainer.cpython-311.pyc
+    │   ├── UnslothIterativeSFTTrainer.cpython-311.pyc
+    │   ├── UnslothKTOTrainer.cpython-311.pyc
+    │   ├── UnslothNashMDTrainer.cpython-311.pyc
+    │   ├── UnslothORPOTrainer.cpython-311.pyc
+    │   ├── UnslothOnlineDPOTrainer.cpython-311.pyc
+    │   ├── UnslothPPOTrainer.cpython-311.pyc
+    │   ├── UnslothPRMTrainer.cpython-311.pyc
+    │   ├── UnslothRLOOTrainer.cpython-311.pyc
+    │   ├── UnslothRewardTrainer.cpython-311.pyc
+    │   ├── UnslothSFTTrainer.cpython-311.pyc
+    │   ├── UnslothXPOTrainer.cpython-311.pyc
+    │   ├── unsloth_compiled_module_gemma3.cpython-311.pyc
+    │   └── unsloth_compiled_module_siglip.cpython-311.pyc
+    ├── unsloth_compiled_module_gemma3.py
+    └── unsloth_compiled_module_siglip.py
+
+46 directories, 270 files
