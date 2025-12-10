@@ -30,4 +30,6 @@ huggingface-hub==0.35.3
 datasets==4.2.0
 safetensors==0.6.2
 
+deepfilternet
+
 
