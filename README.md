@@ -56,8 +56,6 @@ Model output:
 }
 ```
 
-[TODO: add an accuracy number on a held-out test set, e.g. % of outputs that are valid JSON or per-field match rate]
-
 ## How to run
 
 ```bash
